@@ -10,7 +10,6 @@ import b from "../resimler/b.webp";
 import c from "../resimler/c.webp";
 import kk from "../resimler/kk.webp";
 import dd from "../resimler/dd.webp";
-import rrr from "../resimler/rrr.webp";
 import tt from "../resimler/tt.webp";
 import cc from "../resimler/cc.webp";
 import hh from "../resimler/hh.webp";
