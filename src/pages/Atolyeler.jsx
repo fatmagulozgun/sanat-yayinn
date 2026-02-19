@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { FaPalette, FaHandSparkles, FaTheaterMasks, FaPaintBrush } from "react-icons/fa";
-import b from "../resimler/b.png";
-import c from "../resimler/c.png";
-import kk from "../resimler/kk.jpeg";
-import dd from "../resimler/dd.jpg";
-import rrr from "../resimler/rrr.webp";
-import tt from "../resimler/tt.jpg";
-import cc from "../resimler/cc.png";
-import hh from "../resimler/hh.jpeg";
+import b from "../resimler/b.webp";
+import c from "../resimler/c.webp";
+import kk from "../resimler/kk.webp";
+import dd from "../resimler/dd.webp";
+import cc from "../resimler/cc.webp";
+import hh from "../resimler/hh.webp";
 
 const atolyeler = [
   {
@@ -205,7 +203,13 @@ const Atolyeler = () => {
               className={`brans-detail ${index % 2 === 1 ? "brans-detail-reverse" : ""}`}
             >
               <div className="brans-detail-image">
-                <img src={grup.img} alt={grup.baslik} loading="lazy" />
+                <img
+                  src={grup.img}
+                  alt={grup.baslik}
+                  loading="lazy"
+                  width={600}
+                  height={400}
+                />
               </div>
               <div className="brans-detail-content">
                 <div className="brans-detail-header">

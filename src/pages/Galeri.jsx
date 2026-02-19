@@ -1,22 +1,27 @@
 import React, { useState } from "react";
-import img1 from "../resimler/img1.webp";
-import img2 from "../resimler/img2.webp";
-import img3 from "../resimler/img3.webp";
-import img4 from "../resimler/img4.webp";
-import img7 from "../resimler/img7.webp";
-import img9 from "../resimler/img9.webp";
-import img10 from "../resimler/img10.webp";
-import b from "../resimler/b.png";
-import c from "../resimler/c.png";
-import kk from "../resimler/kk.jpeg";
-import dd from "../resimler/dd.jpg";
+import img1 from "../resimler/im1.webp";
+import img2 from "../resimler/im2.webp";
+import img3 from "../resimler/im3.webp";
+import img4 from "../resimler/im4.webp";
+import img7 from "../resimler/im7.webp";
+import img9 from "../resimler/im9.webp";
+import img10 from "../resimler/im10.webp";
+import b from "../resimler/b.webp";
+import c from "../resimler/c.webp";
+import kk from "../resimler/kk.webp";
+import dd from "../resimler/dd.webp";
 import rrr from "../resimler/rrr.webp";
-import tt from "../resimler/tt.jpg";
-import cc from "../resimler/cc.png";
-import hh from "../resimler/hh.jpeg";
+import tt from "../resimler/tt.webp";
+import cc from "../resimler/cc.webp";
+import hh from "../resimler/hh.webp";
+import baglama from "../resimler/baglam.webp";
+import bater from "../resimler/bater.webp";
+import klarnet from "../resimler/klarnet.webp";
+import gitar from "../resimler/gitar.webp";
 const galeriResimleri = [
   { src: img1, alt: "Arvia Sanat atölye" },
   { src: img2, alt: "Arvia Sanat atölye" },
+  { src: bater, alt: "Arvia Sanat atölye" },
   { src: img3, alt: "Arvia Sanat atölye" },
   { src: img4, alt: "Arvia Sanat atölye" },
   { src: img7, alt: "Arvia Sanat atölye" },
@@ -25,11 +30,17 @@ const galeriResimleri = [
   { src: b, alt: "Arvia Sanat atölye" },
   { src: c, alt: "Arvia Sanat atölye" },
   { src: kk, alt: "Arvia Sanat atölye" },
+  { src: gitar, alt: "Arvia Sanat atölye" },
   { src: dd, alt: "Arvia Sanat atölye" },
+  { src: klarnet, alt: "Arvia Sanat atölye" },
   { src: rrr, alt: "Arvia Sanat atölye" },
   { src: tt, alt: "Arvia Sanat atölye" },
   { src: cc, alt: "Arvia Sanat atölye" },
   { src: hh, alt: "Arvia Sanat atölye" },
+  { src: baglama, alt: "Arvia Sanat atölye" },
+
+
+
 ];
 
 const Galeri = () => {
@@ -80,7 +91,13 @@ const Galeri = () => {
               aria-label={`${resim.alt} - Büyütmek için tıklayın`}
             >
               <div className="galeri-kart-image">
-                <img src={resim.src} alt={resim.alt} loading="lazy" />
+                <img
+                  src={resim.src}
+                  alt={resim.alt}
+                  loading="lazy"
+                  width={600}
+                  height={450}
+                />
               </div>
             </button>
           ))}

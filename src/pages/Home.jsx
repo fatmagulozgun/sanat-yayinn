@@ -5,26 +5,24 @@ import musicImg from "../resimler/music.webp";
 import resimImg from "../resimler/resim.webp";
 import dansImg from "../resimler/dans.webp";
 import tiyatroImg from "../resimler/tiyatro.webp";
-import img1 from "../resimler/img1.webp";
-import img2 from "../resimler/img2.webp";
-import img3 from "../resimler/img3.webp";
-import img4 from "../resimler/img4.webp";
-import img7 from "../resimler/img7.webp";
-import img9 from "../resimler/img9.webp";
-import img10 from "../resimler/img10.webp";
-import hh from "../resimler/hh.jpeg";
-import b from "../resimler/b.png";
-
-import c from "../resimler/c.png";
+import img1 from "../resimler/im1.webp";
+import img2 from "../resimler/im2.webp";
+import img3 from "../resimler/im3.webp";
+import img4 from "../resimler/im4.webp";
+import img9 from "../resimler/im9.webp";
+import img10 from "../resimler/im10.webp";
+import hh from "../resimler/hh.webp";
+import b from "../resimler/b.webp";
+import c from "../resimler/c.webp";
 
 const slides = [
-  { id: 0, src: img3, alt: "Arvia Sanat atölyesi" },
-  { id: 1, src: img1, alt: "Arvia Sanat atölyesi" },
-  { id: 2, src: img4, alt: "Arvia Sanat atölyesi" },
-  { id: 3, src: img2, alt: "Arvia Sanat atölyesi" },
-  { id: 4, src: img10, alt: "Arvia Sanat atölyesi" },
-  { id: 5, src: img9, alt: "Arvia Sanat atölyesi" },
-  { id: 6, src: img7, alt: "Arvia Sanat atölyesi" },
+  { id: 0, src: img3 },
+  { id: 1, src: img1 },
+  { id: 2, src: img4 },
+  { id: 3, src: img2 },
+  { id: 4, src: img10 },
+  { id: 5, src: img9 },
+  { id: 6, src: hh },
 ];
 
 const Home = () => {
@@ -131,6 +129,9 @@ const Home = () => {
                   src={slide.src}
                   alt={slide.alt}
                   className={`hero-slider-image ${index === currentIndex ? "is-active" : ""}`}
+                  loading={index === 0 ? "eager" : "lazy"}
+                  width={800}
+                  height={480}
                 />
               ))}
             </div>
@@ -159,7 +160,13 @@ const Home = () => {
           {branslar.map((brans) => (
             <div key={brans.baslik} className="brans-card">
               <div className="brans-card-image">
-                <img src={brans.img} alt={brans.baslik} />
+                <img
+                  src={brans.img}
+                  alt={brans.baslik}
+                  loading="lazy"
+                  width={600}
+                  height={400}
+                />
               </div>
               <h3 className="brans-title">{brans.baslik}</h3>
               <p className="brans-aciklama">{brans.aciklama}</p>
@@ -173,13 +180,31 @@ const Home = () => {
         <h2 className="home-section-title">Atölyelerimiz</h2>
         <div className="atolyeler-images-row">
           <div className="atolyeler-image-card">
-            <img src={c} alt="Arvia Sanat atölye görseli 1" />
+            <img
+              src={c}
+              alt="Arvia Sanat atölye görseli 1"
+              loading="lazy"
+              width={600}
+              height={220}
+            />
           </div>
           <div className="atolyeler-image-card">
-            <img src={hh} alt="Arvia Sanat atölye görseli 2" />
+            <img
+              src={hh}
+              alt="Arvia Sanat atölye görseli 2"
+              loading="lazy"
+              width={600}
+              height={220}
+            />
           </div>
           <div className="atolyeler-image-card">
-            <img src={b} alt="Arvia Sanat atölye görseli 3" />
+            <img
+              src={b}
+              alt="Arvia Sanat atölye görseli 3"
+              loading="lazy"
+              width={600}
+              height={220}
+            />
           </div>
         </div>
         <div className="atolyeler-grid">
