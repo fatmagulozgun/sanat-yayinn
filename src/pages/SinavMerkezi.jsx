@@ -1,0 +1,43 @@
+import React from "react";
+
+const SinavMerkezi = () => {
+  return (
+    <main className="sinav-page brans-page">
+      <div className="container">
+        <header className="brans-header">
+          <h1 className="brans-page-title">Uluslararası Sınav Merkezi</h1>
+          <p className="brans-intro">
+            Arvia Sanat olarak, öğrencilerimizin uluslararası standartlarda ölçme ve değerlendirme
+            süreçlerine katılmalarını önemsiyoruz. Bu doğrultuda akademimiz;
+          </p>
+        </header>
+
+        <section className="sinav-section">
+          <ul className="sinav-list">
+            <li>Royal School of Music (ABRSM)</li>
+            <li>London College of Music</li>
+            <li>Rock School</li>
+          </ul>
+          <p className="sinav-intro-end">
+            sınavlarının uygulandığı yetkili sınav merkezlerinden biridir.
+          </p>
+        </section>
+
+        <section className="sinav-content">
+          <p>
+            Öğrencilerimiz, dünya çapında geçerliliğe sahip bu sınav sistemleri aracılığıyla
+            performanslarını uluslararası kriterlere göre değerlendirme ve sertifikalandırma
+            imkânı bulmaktadır.
+          </p>
+          <p>
+            Akademimiz, sınav süreçlerinin hazırlık aşamasından uygulama sürecine kadar gerekli
+            akademik ve teknik altyapıyı sağlayarak öğrencilerini profesyonel standartlarda
+            desteklemektedir.
+          </p>
+        </section>
+      </div>
+    </main>
+  );
+};
+
+export default SinavMerkezi;

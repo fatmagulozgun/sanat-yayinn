@@ -1,0 +1,227 @@
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { FaAward, FaPalette } from "react-icons/fa";
+import musicImg from "../Images/music.webp";
+import resimImg from "../Images/resim.webp";
+import dansImg from "../Images/dans.webp";
+import tiyatroImg from "../Images/tiyatro.webp";
+import img1 from "../Images/img1.webp";
+import img2 from "../Images/img2.webp";
+import img3 from "../Images/img3.webp";
+import img4 from "../Images/img4.webp";
+import img7 from "../Images/img7.webp";
+import img9 from "../Images/img9.webp";
+import img10 from "../Images/img10.webp";
+import hh from "../Images/hh.jpeg";
+import b from "../Images/b.png";
+
+import c from "../Images/c.png";
+
+const slides = [
+  { id: 0, src: img3, alt: "Arvia Sanat atölyesi" },
+  { id: 1, src: img1, alt: "Arvia Sanat atölyesi" },
+  { id: 2, src: img4, alt: "Arvia Sanat atölyesi" },
+  { id: 3, src: img2, alt: "Arvia Sanat atölyesi" },
+  { id: 4, src: img10, alt: "Arvia Sanat atölyesi" },
+  { id: 5, src: img9, alt: "Arvia Sanat atölyesi" },
+  { id: 6, src: img7, alt: "Arvia Sanat atölyesi" },
+];
+
+const Home = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % slides.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const currentSlide = slides[currentIndex];
+
+  const branslar = [
+    {
+      baslik: "MÜZİK BÖLÜMÜ",
+      aciklama: "Piyano, keman, gitar ve daha fazlası ile profesyonel eğitmenler eşliğinde müzik yolculuğunuza başlayın.",
+      img: musicImg,
+      link: "/branslarimiz#muzik",
+    },
+    {
+      baslik: "RESİM BÖLÜMÜ",
+      aciklama: "Tuval boyama, yağlı boya, seramik ve desen dersleri ile yaratıcılığınızı keşfedin.",
+      img: resimImg,
+      link: "/branslarimiz#resim",
+    },
+    {
+      baslik: "DANS BÖLÜMÜ",
+      aciklama: "Modern dans, bale ve K-Pop ile ritim ve hareketin gücünü deneyimleyin.",
+      img: dansImg,
+      link: "/branslarimiz#dans",
+    },
+    {
+      baslik: "TİYATRO BÖLÜMÜ",
+      aciklama: "Drama, çocuk ve yetişkin tiyatrosu atölyeleri ile sahne sanatlarında kendinizi ifade edin.",
+      img: tiyatroImg,
+      link: "/branslarimiz#tiyatro",
+    },
+  ];
+
+  const atolyeler = [
+    { baslik: "Seramik & Doğal Malzeme Atölyeleri", link: "/atolyelerimiz#seramik-dogal" },
+    { baslik: "Boyama & Yüzey Tasarım Atölyeleri", link: "/atolyelerimiz#boyama-yuzey" },
+    { baslik: "Tekstil & Lif Sanatları", link: "/atolyelerimiz#tekstil-lif" },
+    { baslik: "Geleneksel & Estetik Sanatlar", link: "/atolyelerimiz#geleneksel-estetik" },
+    { baslik: "Psikoloji & Farkındalık Atölyeleri", link: "/atolyelerimiz#psikoloji-farkindalik" },
+    { baslik: "Duyusal & Yaratıcı Üretim", link: "/atolyelerimiz#duyusal-yaratici" },
+  ];
+
+  return (
+    <>
+    <section className="hero">
+      <div className="container hero-inner">
+        {/* Sol Metin Alanı (yaklaşık %40) */}
+        <div className="hero-left">
+          <p className="hero-eyebrow">SANATLA KENDİNİ KEŞFET</p>
+          <h1 className="hero-title">
+            Arvia Sanat Atölyeleri ile
+            Yaratıcılığını Özgür Bırak
+          </h1>
+          <p className="hero-description">
+            Resim, seramik, heykel ve çocuk atölyeleri ile her yaşa uygun sanat
+            deneyimi sunuyoruz. Şehrin merkezinde, ilham verici bir ortamda
+            yaratıcı yolculuğuna şimdi başla.
+          </p>
+
+          <div className="hero-actions">
+            <a href="/atolyelerimiz" className="btn btn-primary">
+              Atölyeleri İncele
+            </a>
+            <a href="/iletisim" className="btn btn-secondary">
+              İletişime Geç
+            </a>
+          </div>
+        </div>
+
+        {/* Sağ Slider Alanı (yaklaşık %60) */}
+        <div className="hero-right">
+          <div className="hero-slider">
+            <div
+              className="hero-slider-image-wrapper"
+              role="button"
+              tabIndex={0}
+              aria-label="Önceki veya sonraki görsele geçmek için sola veya sağa tıklayın"
+              onClick={(e) => {
+                const rect = e.currentTarget.getBoundingClientRect();
+                const x = (e.clientX - rect.left) / rect.width;
+                if (x < 0.4) {
+                  setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
+                } else if (x > 0.6) {
+                  setCurrentIndex((prev) => (prev + 1) % slides.length);
+                }
+              }}
+              onKeyDown={(e) => {
+                if (e.key === "ArrowLeft") setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
+                if (e.key === "ArrowRight") setCurrentIndex((prev) => (prev + 1) % slides.length);
+              }}
+            >
+              {slides.map((slide, index) => (
+                <img
+                  key={slide.id}
+                  src={slide.src}
+                  alt={slide.alt}
+                  className={`hero-slider-image ${index === currentIndex ? "is-active" : ""}`}
+                />
+              ))}
+            </div>
+
+            <div className="hero-slider-indicators" aria-hidden="true">
+              {slides.map((slide, index) => (
+                <button
+                  key={slide.id}
+                  type="button"
+                  className={`hero-slider-indicator${
+                    index === currentIndex ? " is-active" : ""
+                  }`}
+                  onClick={() => setCurrentIndex(index)}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section className="home-programs">
+      <div className="container">
+        <h2 className="home-section-title">Branşlarımız</h2>
+        <div className="branslar-grid">
+          {branslar.map((brans) => (
+            <div key={brans.baslik} className="brans-card">
+              <div className="brans-card-image">
+                <img src={brans.img} alt={brans.baslik} />
+              </div>
+              <h3 className="brans-title">{brans.baslik}</h3>
+              <p className="brans-aciklama">{brans.aciklama}</p>
+              <Link to={brans.link} className="btn btn-brans">
+                Detaylı Bilgi İçin
+              </Link>
+            </div>
+          ))}
+        </div>
+
+        <h2 className="home-section-title">Atölyelerimiz</h2>
+        <div className="atolyeler-images-row">
+          <div className="atolyeler-image-card">
+            <img src={c} alt="Arvia Sanat atölye görseli 1" />
+          </div>
+          <div className="atolyeler-image-card">
+            <img src={hh} alt="Arvia Sanat atölye görseli 2" />
+          </div>
+          <div className="atolyeler-image-card">
+            <img src={b} alt="Arvia Sanat atölye görseli 3" />
+          </div>
+        </div>
+        <div className="atolyeler-grid">
+          {atolyeler.map((atolye) => (
+            <Link key={atolye.baslik} to={atolye.link} className="atolye-card">
+              {atolye.baslik}
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section className="home-premium-blocks">
+      <div className="container premium-blocks-inner">
+        <div className="premium-block">
+          <div className="premium-block-header">
+            <div className="premium-block-icon">
+              <FaAward aria-hidden />
+            </div>
+            <h3 className="premium-block-title">Uluslararası Sınav Merkezi</h3>
+          </div>
+          <p className="premium-block-text">
+            ABRSM, London College of Music ve Rock School sınavlarının uygulandığı yetkili merkez.{' '}
+            <a href="/uluslararasi-sinav-merkezi" className="premium-block-link">Tıklayınız</a>
+          </p>
+        </div>
+        <div className="premium-block">
+          <div className="premium-block-header">
+            <div className="premium-block-icon">
+              <FaPalette aria-hidden />
+            </div>
+            <h3 className="premium-block-title">Güzel Sanatlar ve Konservatuvar Hazırlık Programları</h3>
+          </div>
+          <p className="premium-block-text">
+            Güzel sanatlar fakülteleri ve konservatuvarlara giriş sınavlarına hazırlık. Deneyimli kadromuz ile portfolyo ve yetenek sınavlarına yönelik birebir destek sunuyoruz.{' '}
+            <a href="/guzel-sanatlar" className="premium-block-link">Tıklayınız</a>
+          </p>
+        </div>
+      </div>
+    </section>
+    </>
+  );
+};
+
+export default Home;
