@@ -1,17 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { FaPalette, FaHandSparkles, FaTheaterMasks, FaPaintBrush } from "react-icons/fa";
-import resimImg from "../Images/resim.webp";
-import dansImg from "../Images/dans.webp";
-import musicImg from "../Images/music.webp";
-import tiyatroImg from "../Images/tiyatro.webp";
-import b from "../Images/b.png";
-import c from "../Images/c.png";
-import kk from "../Images/kk.jpeg";
-import dd from "../Images/dd.jpg";
-import rrr from "../Images/rrr.webp";
-import tt from "../Images/tt.jpg";
-import cc from "../Images/cc.png";
-import hh from "../Images/hh.jpeg";
+import b from "../resimler/b.png";
+import c from "../resimler/c.png";
+import kk from "../resimler/kk.jpeg";
+import dd from "../resimler/dd.jpg";
+import rrr from "../resimler/rrr.webp";
+import tt from "../resimler/tt.jpg";
+import cc from "../resimler/cc.png";
+import hh from "../resimler/hh.jpeg";
 
 const atolyeler = [
   {

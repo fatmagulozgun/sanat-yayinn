@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { FaInstagram, FaWhatsapp, FaMapMarkerAlt } from "react-icons/fa";
-import logoImg from "../Images/resim-logo.webp";
+import logoImg from "../resimler/resim-logo.webp";
 
 export default function Footer() {
   return (

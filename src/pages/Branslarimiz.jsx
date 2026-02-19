@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { FaMusic, FaPalette, FaChild, FaTheaterMasks } from "react-icons/fa";
-import musicImg from "../Images/music.webp";
-import resimImg from "../Images/resim.webp";
-import dansImg from "../Images/dans.webp";
-import tiyatroImg from "../Images/tiyatro.webp";
+import musicImg from "../resimler/music.webp";
+import resimImg from "../resimler/resim.webp";
+import dansImg from "../resimler/dans.webp";
+import tiyatroImg from "../resimler/tiyatro.webp";
 
 const enstrumanAciklamalari = {
   "Piyano":

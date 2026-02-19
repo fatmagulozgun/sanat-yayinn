@@ -1,6 +1,6 @@
 import React from "react";
-import mudurImg from "../Images/mudurr.jpg";
-import tanitimVideo from "../Images/Tanıtım-filmi.mp4";
+import mudurImg from "../resimler/mudurr.JPG";
+import tanitimVideo from "../resimler/Tanıtım-filmi.mp4";
 
 const About = () => {
   return (

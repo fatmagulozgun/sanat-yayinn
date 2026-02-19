@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaAward, FaPalette } from "react-icons/fa";
-import musicImg from "../Images/music.webp";
-import resimImg from "../Images/resim.webp";
-import dansImg from "../Images/dans.webp";
-import tiyatroImg from "../Images/tiyatro.webp";
-import img1 from "../Images/img1.webp";
-import img2 from "../Images/img2.webp";
-import img3 from "../Images/img3.webp";
-import img4 from "../Images/img4.webp";
-import img7 from "../Images/img7.webp";
-import img9 from "../Images/img9.webp";
-import img10 from "../Images/img10.webp";
-import hh from "../Images/hh.jpeg";
-import b from "../Images/b.png";
+import musicImg from "../resimler/music.webp";
+import resimImg from "../resimler/resim.webp";
+import dansImg from "../resimler/dans.webp";
+import tiyatroImg from "../resimler/tiyatro.webp";
+import img1 from "../resimler/img1.webp";
+import img2 from "../resimler/img2.webp";
+import img3 from "../resimler/img3.webp";
+import img4 from "../resimler/img4.webp";
+import img7 from "../resimler/img7.webp";
+import img9 from "../resimler/img9.webp";
+import img10 from "../resimler/img10.webp";
+import hh from "../resimler/hh.jpeg";
+import b from "../resimler/b.png";
 
-import c from "../Images/c.png";
+import c from "../resimler/c.png";
 
 const slides = [
   { id: 0, src: img3, alt: "Arvia Sanat atölyesi" },
