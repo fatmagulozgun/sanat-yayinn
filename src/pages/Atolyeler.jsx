@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { FaPalette, FaHandSparkles, FaTheaterMasks, FaPaintBrush } from "react-icons/fa";
-import b from "../resimler/b.png";
-import c from "../resimler/c.png";
-import kk from "../resimler/kk.jpeg";
-import dd from "../resimler/dd.jpg";
-import rrr from "../resimler/rrr.webp";
-import tt from "../resimler/tt.jpg";
-import cc from "../resimler/cc.png";
-import hh from "../resimler/hh.jpeg";
+import sepet from "../resimler/sepet.webp";
+import mandala from "../resimler/mandala.webp";
+import kece from "../resimler/kece.webp";
+import dd from "../resimler/dd.webp";
+import icimdekiCocuk from "../resimler/icimdekiCocuk.webp";
+import parfum from "../resimler/parfum.webp";
 
 const atolyeler = [
   {
@@ -109,7 +107,7 @@ const atolyeGruplari = [
     baslik: "Seramik & Doğal Malzeme Atölyeleri",
     aciklama:
       "Bu atölyede katılımcılar, seramik sanatının temel şekillendirme tekniklerini uygulamalı olarak deneyimler. Tasarım süreci; çamurun hazırlanması, form verilmesi ve yüzey düzenleme aşamalarını kapsayacak şekilde planlanır. Katılımcılar kendi tasarladıkları bardakları üretme fırsatı bulur; üretim sürecinde sabır, el becerisi ve estetik bakış açısı geliştirir. Atölye sonunda ortaya çıkan özgün çalışmalar, sanatsal üretimin somut ve kalıcı bir deneyime dönüşmesini sağlar.",
-    img: b,
+    img: sepet,
     icon: FaHandSparkles,
   },
   {
@@ -117,7 +115,7 @@ const atolyeGruplari = [
     baslik: "Boyama & Yüzey Tasarım Atölyeleri",
     aciklama:
       "Doğal malzeme ile üretim bilincini geliştirmeyi amaçlayan bu atölye, el sanatları geleneğini çağdaş bir yaklaşımla buluşturur. Katılımcılar bambu malzemenin yapısını tanır, temel örme tekniklerini öğrenir ve kendi sepet tasarımlarını oluşturur. Süreç boyunca el-göz koordinasyonu, dikkat ve sabır becerileri desteklenir. Bu çalışma aynı zamanda sürdürülebilir üretim anlayışını teşvik eden bir içerik sunar.",
-    img: c,
+    img: mandala,
     icon: FaPalette,
   },
   {
@@ -125,7 +123,7 @@ const atolyeGruplari = [
     baslik: "Tekstil & Lif Sanatları",
     aciklama:
       "Psikoloji ve müziği bir araya getiren disiplinler arası bir çalışmadır. Uzman psikolog eşliğinde gerçekleştirilen bilgilendirme sürecinin ardından, canlı piyano dinletisi eşliğinde katılımcılar çocukluklarına ait bir anıyı resimle ifade eder; çalışmalar psikolojik değerlendirme ve farkındalık süreciyle ele alınır. Atölye, çocukluklarına yazılan mektuplarla tamamlanır ve katılımcıların duygusal içgörü geliştirmeleri hedeflenir.",
-    img: kk,
+    img: kece,
     icon: FaTheaterMasks,
   },
   {
@@ -141,7 +139,7 @@ const atolyeGruplari = [
     baslik: "Psikoloji & Farkındalık Atölyeleri",
     aciklama:
       "\"İçimdeki Çocukluğa Yolculuk\" atölyesi; psikoloji ve müziği bir araya getiren disiplinler arası bir çalışmadır. Uzman psikolog eşliğinde gerçekleştirilen bilgilendirme sürecinin ardından, canlı piyano dinletisi eşliğinde katılımcılar çocukluklarına ait bir anıyı resimle ifade eder; çalışmalar psikolojik değerlendirme ve farkındalık süreciyle ele alınır. Atölye, çocukluklarına yazılan mektuplarla tamamlanır ve katılımcıların duygusal içgörü geliştirmeleri hedeflenir.",
-    img: cc,
+    img: icimdekiCocuk,
     icon: FaTheaterMasks,
   },
   {
@@ -149,7 +147,7 @@ const atolyeGruplari = [
     baslik: "Duyusal & Yaratıcı Üretim",
     aciklama:
       "Parfüm Yapımı Atölyesi, koku notalarının yapısını ve uyumunu öğretmeyi amaçlar. Katılımcılar üst, orta ve alt notaları tanır; kendi kişisel koku formüllerini oluşturur. Bu süreç, duyusal farkındalığı ve yaratıcı üretim becerisini destekler.",
-    img: hh,
+    img: parfum,
     icon: FaPaintBrush,
   },
 ];
@@ -205,7 +203,13 @@ const Atolyeler = () => {
               className={`brans-detail ${index % 2 === 1 ? "brans-detail-reverse" : ""}`}
             >
               <div className="brans-detail-image">
-                <img src={grup.img} alt={grup.baslik} loading="lazy" />
+                <img
+                  src={grup.img}
+                  alt={grup.baslik}
+                  loading="lazy"
+                  width={600}
+                  height={400}
+                />
               </div>
               <div className="brans-detail-content">
                 <div className="brans-detail-header">

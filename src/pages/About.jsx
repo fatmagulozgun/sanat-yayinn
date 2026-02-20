@@ -1,5 +1,5 @@
 import React from "react";
-import mudurImg from "../resimler/mudurr.JPG";
+import mudurImg from "../resimler/mudurr.webp";
 import tanitimVideo from "../resimler/Tanıtım-filmi.mp4";
 
 const About = () => {
@@ -10,12 +10,24 @@ const About = () => {
           <div className="about-media-section">
             <div className="about-media-block">
               <div className="about-hero-video">
-                <video src={tanitimVideo} autoPlay playsInline muted loop controls>
+                <video
+                  src={tanitimVideo}
+                  controls
+                  muted
+                  playsInline
+                  preload="metadata"
+                >
                   Tarayıcınız video oynatmayı desteklemiyor.
                 </video>
               </div>
               <div className="about-hero-image">
-                <img src={mudurImg} alt="Erol Ermetal - Kurum Müdürü" />
+                <img
+                  src={mudurImg}
+                  alt="Erol Ermetal - Kurum Müdürü"
+                  loading="lazy"
+                  width={280}
+                  height={420}
+                />
               </div>
             </div>
             <div className="about-media-text">
