@@ -58,6 +58,9 @@ const Contact = () => {
                 <a href="https://wa.me/905532109933" target="_blank" rel="noopener noreferrer" className="contact-social-link" aria-label="WhatsApp">
                   <FaWhatsapp />
                 </a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Hamidiye+mah,+4201+sokak+no:4,+%C3%87aml%C4%B1bel,+Akdeniz,+Mersin" target="_blank" rel="noopener noreferrer" className="contact-social-link" aria-label="Google Maps">
+                <FaMapMarkerAlt />
+                </a>
               </div>
             </div>
           </section>

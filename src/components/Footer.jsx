@@ -64,13 +64,6 @@ export default function Footer() {
       <div className="footer-bottom">
         <div className="container footer-bottom-inner">
           <span className="footer-copy">© {new Date().getFullYear()} Arvia Sanat. Tüm hakları saklıdır.</span>
-          <div className="footer-legal">
-            <a href="/kvkk">KVKK</a>
-            <span className="footer-legal-sep">|</span>
-            <a href="/gizlilik">Gizlilik Politikası</a>
-            <span className="footer-legal-sep">|</span>
-            <a href="/cerez">Çerez Politikası</a>
-          </div>
         </div>
       </div>
     </footer>

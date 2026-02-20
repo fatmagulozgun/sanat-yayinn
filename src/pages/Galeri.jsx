@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import img1 from "../resimler/im1.webp";
 import img2 from "../resimler/im2.webp";
 import img3 from "../resimler/im3.webp";
@@ -9,7 +9,6 @@ import img10 from "../resimler/im10.webp";
 import sepet from "../resimler/sepet.webp";
 import mandala from "../resimler/mandala.webp";
 import kece from "../resimler/kece.webp";
-import dd from "../resimler/dd.webp";
 import psikoloji from "../resimler/psikoloji.webp";
 import icimdekiCocuk from "../resimler/icimdekiCocuk.webp";
 import parfum from "../resimler/parfum.webp";
@@ -30,7 +29,6 @@ const galeriResimleri = [
   { src: mandala, alt: "Arvia Sanat atölye" },
   { src: kece, alt: "Arvia Sanat atölye" },
   { src: gitar, alt: "Arvia Sanat atölye" },
-  { src: dd, alt: "Arvia Sanat atölye" },
   { src: klarnet, alt: "Arvia Sanat atölye" },
   { src: psikoloji, alt: "Arvia Sanat atölye" },
   { src: icimdekiCocuk, alt: "Arvia Sanat atölye" },
@@ -49,21 +47,42 @@ const Galeri = () => {
     setSeciliIndex(null);
   };
 
-  const handleOnceki = (e) => {
-    e.stopPropagation();
+  const goOnceki = () => {
     if (seciliIndex === null) return;
     setSeciliIndex((prev) =>
       prev === 0 ? galeriResimleri.length - 1 : prev - 1
     );
   };
 
-  const handleSonraki = (e) => {
-    e.stopPropagation();
+  const goSonraki = () => {
     if (seciliIndex === null) return;
     setSeciliIndex((prev) =>
       prev === galeriResimleri.length - 1 ? 0 : prev + 1
     );
   };
+
+  useEffect(() => {
+    if (seciliIndex === null) return;
+
+    const handleKeyDown = (event) => {
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        goSonraki();
+      } else if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        goOnceki();
+      } else if (event.key === "Escape") {
+        event.preventDefault();
+        handleKapat();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [seciliIndex]);
 
   return (
     <main className="galeri-page">
@@ -125,19 +144,27 @@ const Galeri = () => {
             <button
               type="button"
               className="galeri-modal-arrow galeri-modal-arrow-left"
-              onClick={handleOnceki}
+              onClick={(e) => {
+                e.stopPropagation();
+                goOnceki();
+              }}
               aria-label="Önceki resim"
             >
               ‹
             </button>
-            <img
-              src={galeriResimleri[seciliIndex].src}
-              alt={galeriResimleri[seciliIndex].alt}
-            />
+            <div className="galeri-modal-image">
+              <img
+                src={galeriResimleri[seciliIndex].src}
+                alt={galeriResimleri[seciliIndex].alt}
+              />
+            </div>
             <button
               type="button"
               className="galeri-modal-arrow galeri-modal-arrow-right"
-              onClick={handleSonraki}
+              onClick={(e) => {
+                e.stopPropagation();
+                goSonraki();
+              }}
               aria-label="Sonraki resim"
             >
               ›

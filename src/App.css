@@ -1,5 +1,4 @@
 :root { 
-    /* Ana palet - sıcak sanat atölyesi teması */
     --cream: #fdf9f5;
     --cream-warm: #f8f2eb;
     --cream-soft: #f5efe6;
@@ -82,6 +81,7 @@ a {  /*link etiketleri*/
 
 .navbar-inner {
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
     max-width: var(--container);
@@ -181,6 +181,10 @@ a {  /*link etiketleri*/
 
 .footer-col {
     min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .footer-brand {
@@ -216,7 +220,12 @@ a {  /*link etiketleri*/
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--accent-light);
-    margin: 0 0 20px;
+    margin: 0 auto 20px;
+    padding-bottom: 8px;
+    text-align: center;
+    display: inline-block;
+    width: fit-content;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.28);
 }
 
 .footer-menu,
@@ -224,6 +233,9 @@ a {  /*link etiketleri*/
     list-style: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .footer-menu li,
@@ -248,9 +260,6 @@ a {  /*link etiketleri*/
     color: rgba(255, 255, 255, 0.8);
 }
 
-.footer-col-social .footer-heading {
-    text-align: center;
-}
 
 .footer-col-social .footer-social {
     justify-content: center;
@@ -657,10 +666,6 @@ a {  /*link etiketleri*/
     transition: transform 200ms ease, box-shadow 200ms ease;
 }
 
-.atolyeler-image-card:nth-child(2) {
-    transform: translateY(-24px);
-}
-
 .atolyeler-image-card img {
     width: 100%;
     height: 220px;
@@ -672,10 +677,6 @@ a {  /*link etiketleri*/
 .atolyeler-image-card:hover {
     transform: translateY(-8px);
     box-shadow: var(--shadow-hover);
-}
-
-.atolyeler-image-card:nth-child(2):hover {
-    transform: translateY(-32px);
 }
 
 .atolyeler-image-card:hover img {
@@ -936,7 +937,7 @@ a {  /*link etiketleri*/
     grid-template-columns: minmax(0, 620px) 1fr;
     gap: 20px;
     align-items: start;
-    margin: 16px 0 18px;
+    margin: 16px 0 12px;
 }
 
 .about-media-block {
@@ -1883,10 +1884,16 @@ a.contact-card:focus {
     position: relative;
 }
 
-.galeri-modal-content img {
-    max-width: 100%;
+.galeri-modal-image {
+    max-width: min(1000px, 95vw);
     max-height: 85vh;
-    object-fit: contain;
+    aspect-ratio: 4 / 3;
+}
+
+.galeri-modal-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: var(--radius);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 }
@@ -2023,5 +2030,12 @@ a.contact-card:focus {
 
     .about-media-text p {
         font-size: 14px;
+    }
+}
+
+/* GENİŞ EKRANLAR İÇİN – konteyneri biraz daha aç */
+@media (min-width: 1440px) {
+    .container {
+        max-width: 90vw;
     }
 }

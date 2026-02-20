@@ -15,13 +15,7 @@ export default function Navbar() {
           <img src={logoImg} alt="Arvia Sanat" className="navbar-logo-img" />
         </NavLink>
 
-        <button
-          type="button"
-          className="navbar-toggle"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label={menuOpen ? "Menüyü kapat" : "Menüyü aç"}
-          aria-expanded={menuOpen}
-        >
+        <button type="button" className="navbar-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? "Menüyü kapat" : "Menüyü aç"} aria-expanded={menuOpen}>
           {menuOpen ? <FaTimes /> : <FaBars />}
         </button>
 
