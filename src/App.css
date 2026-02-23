@@ -1201,9 +1201,9 @@ a {  /*link etiketleri*/
     border: 1px solid var(--border);
     box-shadow: var(--shadow);
     background: var(--cream-soft);
-    /* Masaüstünde sol kolonun (metin + buton) yüksekliği kadar olsun */
-    align-self: stretch;
-    height: 100%;
+    min-height: 280px;
+    max-height: 460px;
+    align-self: center;
     display: flex;
     align-items: center;
     justify-content: center;
