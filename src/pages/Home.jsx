@@ -26,22 +26,19 @@ const slides = [
 ];
 
 const Home = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0); // currentIndex : hangi görsel gösteriliyor.0:ilk görsel..
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % slides.length);
-    }, 5000);
-
+      setCurrentIndex((prev) => (prev + 1) % slides.length); // prev : 0 --> 1 % 7 = 1.görseli göster 5sn
+    }, 5000);                                                // prev : 1 --> 2 % 7 = 2.görseli göster 5sn..
     return () => clearInterval(interval);
   }, []);
-
-  const currentSlide = slides[currentIndex];
 
   const branslar = [
     {
       baslik: "MÜZİK BÖLÜMÜ",
-      aciklama: "Piyano, keman, gitar ve daha fazlası ile profesyonel eğitmenler eşliğinde müzik yolculuğunuza başlayın.",
+      aciklama: "Piyano, gitar ve daha fazlası ile profesyonel eğitmenlerle müzik yolculuğunuza başlayın.",
       img: musicImg,
       link: "/branslarimiz#muzik",
     },
@@ -78,7 +75,7 @@ const Home = () => {
     <>
     <section className="hero">
       <div className="container hero-inner">
-        {/* Sol Metin Alanı (yaklaşık %40) */}
+        {/* Sol Metin Alanı*/}
         <div className="hero-left">
           <p className="hero-eyebrow">SANATLA KENDİNİ KEŞFET</p>
           <h1 className="hero-title">
@@ -92,27 +89,26 @@ const Home = () => {
           </p>
 
           <div className="hero-actions">
-            <a href="/atolyelerimiz" className="btn btn-primary">
+            <Link to="/atolyelerimiz" className="btn btn-primary">
               Atölyeleri İncele
-            </a>
-            <a href="/iletisim" className="btn btn-secondary">
+            </Link>
+            <Link to="/iletisim" className="btn btn-secondary">
               İletişime Geç
-            </a>
+            </Link>
           </div>
         </div>
 
-        {/* Sağ Slider Alanı (yaklaşık %60) */}
+        {/* Sağ Slider Alanı*/}
         <div className="hero-right">
           <div className="hero-slider">
             <div
               className="hero-slider-image-wrapper"
               role="button"
               tabIndex={0}
-              aria-label="Önceki veya sonraki görsele geçmek için sola veya sağa tıklayın"
               onClick={(e) => {
-                const rect = e.currentTarget.getBoundingClientRect();
-                const x = (e.clientX - rect.left) / rect.width;
-                if (x < 0.4) {
+                const tiklananAlan = e.currentTarget.getBoundingClientRect();
+                const x = (e.clientX - tiklananAlan.left) / tiklananAlan.width; // x : tiklanan alanın x koordinatı
+                if (x < 0.4) { //sliderin %40 sol kısmına tıklanırsa önceki görsele geç
                   setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
                 } else if (x > 0.6) {
                   setCurrentIndex((prev) => (prev + 1) % slides.length);

@@ -1,7 +1,8 @@
-import React, { Suspense, lazy } from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import React, { Suspense, lazy, useEffect } from "react";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import Layout from "./components/Layout";
 import "./App.css";
+import ScrollToTop from "./components/ScrollToTop";
 
 const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
@@ -12,9 +13,13 @@ const Branslarimiz = lazy(() => import("./pages/Branslarimiz"));
 const SinavMerkezi = lazy(() => import("./pages/SinavMerkezi"));
 const GuzelSanatlar = lazy(() => import("./pages/GuzelSanatlar"));
 const AboutBilgi = lazy(() => import("./pages/AboutBilgi"));
+
+
+
 function App() {
   return (
     <Suspense fallback={null}>
+      <ScrollToTop />
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
@@ -31,9 +36,9 @@ function App() {
           <Route path="/guzel-sanatlar" element={<GuzelSanatlar />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
-      </Routes>
-    </Suspense>
-  );
+        </Routes>
+      </Suspense>
+    );
 }
 
 export default App;

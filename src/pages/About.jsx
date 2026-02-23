@@ -11,7 +11,7 @@ const About = () => {
     const video = videoRef.current;
     if (video) {
       video.muted = true;
-      video.play().catch(() => {});
+      video.play().catch(() => { });
     }
   }, []);
 
@@ -36,10 +36,17 @@ const About = () => {
               </div>
               <div className="about-hero-text">
                 <p>
-                  Yılların deneyimini sanatsal tutkuyla birleştirerek Arvia Sanat'ta müzik, resim, dans ve tiyatro alanlarında yenilikçi bir eğitim modeli sunuyoruz. Öğrencilerimizin sanatsal potansiyelini keşfetmelerine ve kendilerini özgürce ifade etmelerine alan açıyoruz.
+                  Yılların deneyimini sanatsal tutkuyla birleştirerek Arvia Sanat'ta müzik,
+                  resim, dans ve tiyatro alanlarında yenilikçi bir eğitim modeli sunuyoruz.
+                  Öğrencilerimizin sanatsal potansiyelini keşfetmelerine ve kendilerini özgürce
+                  ifade etmelerine alan açıyoruz.
                 </p>
+
                 <p>
-                  Disiplinli çalışma, bireysel gelişim ve estetik bakış açısıyla geleceğin sanatçılarını yetiştiriyor; her yaştan bireyin sanatla buluştuğu bir akademi olarak yolculuğumuza devam ediyoruz.
+                  Disiplinli çalışma, bireysel gelişim ve estetik bakış açısıyla geleceğin
+                  sanatçılarını yetiştiriyor; her yaştan bireyin sanatla buluştuğu bir akademi
+                  olarak yolculuğumuza devam ediyoruz. Sanatı yaşamın doğal bir parçası haline
+                  getiren bir eğitim anlayışı benimsiyoruz.
                 </p>
                 <Link to="/hakkimizda-bilgi" className="about-hero-cta">
                   DAHA FAZLA

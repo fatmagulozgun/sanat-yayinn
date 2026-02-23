@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const SinavMerkezi = () => {
   return (
@@ -15,9 +16,9 @@ const SinavMerkezi = () => {
         <section className="sinav-section">
           <div className="sinav-section-inline">
             <ul className="sinav-list">
-              <li>Royal School of Music (ABRSM)</li>
-              <li>London College of Music</li>
-              <li>Rock School</li>
+              <li><Link to="https://www.abrsm.org" target="_blank" rel="noopener noreferrer">Royal School of Music (ABRSM)</Link></li>
+              <li><Link to="https://www.lcm.org.uk" target="_blank" rel="noopener noreferrer">London College of Music</Link></li>
+              <li><Link to="https://www.rock-school.org" target="_blank" rel="noopener noreferrer">Rock School</Link></li>
             </ul>
             <span className="sinav-intro-end">
               sınavlarının uygulandığı yetkili sınav merkezlerinden biridir.

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes, FaInstagram, FaWhatsapp, FaMapMarkerAlt } from "react-icons/fa";
 import logoImg from "../resimler/resim-logo.webp";
 
 export default function Navbar() {
@@ -15,7 +15,7 @@ export default function Navbar() {
           <img src={logoImg} alt="Arvia Sanat" className="navbar-logo-img" />
         </NavLink>
 
-        <button type="button" className="navbar-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? "Menüyü kapat" : "Menüyü aç"} aria-expanded={menuOpen}>
+        <button type="button" className="navbar-toggle" onClick={() => setMenuOpen(!menuOpen)} >
           {menuOpen ? <FaTimes /> : <FaBars />}
         </button>
 
@@ -27,7 +27,36 @@ export default function Navbar() {
           <NavLink className="navLink" to="/galeri" onClick={closeMenu}>Galeri</NavLink>
           <NavLink className="navLink" to="/iletisim" onClick={closeMenu}>İletişim</NavLink>
         </div>
-        <div className="navbar-spacer" aria-hidden="true" />
+        <div className="navbar-social">
+          <a
+            href="https://instagram.com/arvia.sanat"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="navbar-social-link"
+            aria-label="Instagram"
+          >
+            <FaInstagram />
+          </a>
+          <a
+            href="https://wa.me/905532109933"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="navbar-social-link"
+            aria-label="WhatsApp"
+          >
+            <FaWhatsapp />
+          </a>
+
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=Hamidiye+mah,+4201+sokak+no:4,+%C3%87aml%C4%B1bel,+Akdeniz,+Mersin"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="navbar-social-link"
+            aria-label="Google Maps"
+          >
+            <FaMapMarkerAlt />
+          </a>
+        </div>
       </div>
     </nav>
   );

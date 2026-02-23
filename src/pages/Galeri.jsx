@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
-import img1 from "../resimler/im1.webp";
 import img2 from "../resimler/im2.webp";
-import img3 from "../resimler/im3.webp";
 import img4 from "../resimler/im4.webp";
-import img7 from "../resimler/im7.webp";
 import img9 from "../resimler/im9.webp";
 import img10 from "../resimler/im10.webp";
 import sepet from "../resimler/sepet.webp";
@@ -15,25 +12,50 @@ import parfum from "../resimler/parfum.webp";
 import baglama from "../resimler/baglam.webp";
 import bater from "../resimler/bater.webp";
 import klarnet from "../resimler/klarnet.webp";
+import ne1 from "../resimler/ne1.webp";
+import ne2 from "../resimler/ne2.webp";
+import ne3 from "../resimler/ne3.webp";
+import ne4 from "../resimler/ne4.webp";
+import ne6 from "../resimler/ne6.webp";
+import ne7 from "../resimler/ne7.webp";
+import pp from "../resimler/pp.webp";
+import pp1 from "../resimler/pp1.webp";
+import pp2 from "../resimler/pp2.webp";
+import pp3 from "../resimler/pp3.webp";
+import pp4 from "../resimler/pp4.webp";
+import pp5 from "../resimler/pp5.webp";
+import pp6 from "../resimler/pp6.webp";
+import pp7 from "../resimler/pp7.webp";
+import pp8 from "../resimler/pp8.webp";
+import pp9 from "../resimler/pp9.webp";
+
 import gitar from "../resimler/gitar.webp";
 const galeriResimleri = [
-  { src: img1, alt: "Arvia Sanat atölye" },
   { src: img2, alt: "Arvia Sanat atölye" },
   { src: bater, alt: "Arvia Sanat atölye" },
-  { src: img3, alt: "Arvia Sanat atölye" },
   { src: img4, alt: "Arvia Sanat atölye" },
-  { src: img7, alt: "Arvia Sanat atölye" },
   { src: img9, alt: "Arvia Sanat atölye" },
+  { src: pp2, alt: "Arvia Sanat atölye" },
   { src: img10, alt: "Arvia Sanat atölye" },
   { src: sepet, alt: "Arvia Sanat atölye" },
-  { src: mandala, alt: "Arvia Sanat atölye" },
   { src: kece, alt: "Arvia Sanat atölye" },
   { src: gitar, alt: "Arvia Sanat atölye" },
-  { src: klarnet, alt: "Arvia Sanat atölye" },
   { src: psikoloji, alt: "Arvia Sanat atölye" },
-  { src: icimdekiCocuk, alt: "Arvia Sanat atölye" },
+  { src: pp9, alt: "Arvia Sanat atölye" },
   { src: parfum, alt: "Arvia Sanat atölye" },
+  { src: pp, alt: "Arvia Sanat atölye" },
   { src: baglama, alt: "Arvia Sanat atölye" },
+  { src: ne1, alt: "Arvia Sanat atölye" },
+  { src: ne2, alt: "Arvia Sanat atölye" },
+  { src: mandala, alt: "Arvia Sanat atölye" },
+  { src: ne4, alt: "Arvia Sanat atölye" },
+  { src: ne6, alt: "Arvia Sanat atölye" },
+  { src: ne3, alt: "Arvia Sanat atölye" },
+  { src: pp2, alt: "Arvia Sanat atölye" },
+  { src: klarnet, alt: "Arvia Sanat atölye" },
+  { src: pp6, alt: "Arvia Sanat atölye" },
+  { src: pp8, alt: "Arvia Sanat atölye" },
+  { src: icimdekiCocuk, alt: "Arvia Sanat atölye" },
 ];
 
 const Galeri = () => {

@@ -1,8 +1,52 @@
 import { Link } from "react-router-dom";
 import { FaInstagram, FaWhatsapp, FaMapMarkerAlt } from "react-icons/fa";
 import logoImg from "../resimler/resim-logo.webp";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function Footer() {
+
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleNavClick = (path) => (e) => {
+
+    // zaten o sayfadaysak yönlendirmeyi iptal et
+    if (location.pathname === path) {
+      e.preventDefault();
+  
+      // gerçek scroll container (bizim main)
+      const main = document.querySelector("main");
+      if (main) {
+        main.scrollTo({ top: 0, behavior: "smooth" });
+      }
+  
+      // garanti
+      window.scrollTo(0,0);
+    }
+  };
+
+  const goHome = (e) => {
+    e.preventDefault();
+
+    // zaten anasayfadaysak sadece yukarı çık
+    if (location.pathname === "/") {
+      // Farklı tarayıcı ve layout'larda güvenli şekilde en üste al
+      const scrollOptions = { top: 0, behavior: "smooth" };
+
+      if (document.documentElement) {
+        document.documentElement.scrollTo(scrollOptions);
+      }
+      if (document.body) {
+        document.body.scrollTo(scrollOptions);
+      }
+      window.scrollTo(scrollOptions);
+    } else {
+      // başka sayfadaysak normal yönlendir
+      navigate("/");
+    }
+  };
+
+
   return (
     <footer className="footer">
       <div className="footer-main">
@@ -13,7 +57,7 @@ export default function Footer() {
               <img src={logoImg} alt="Arvia Sanat" className="footer-logo-img" />
             </Link>
             <p className="footer-desc">
-            Müzik, resim, dans ve tiyatro alanlarında profesyonel eğitim sunan, öğrencilerini çok yönlü gelişime teşvik eden bir sanat akademisi
+              Müzik, resim, dans ve tiyatro alanlarında profesyonel eğitim sunan, öğrencilerini çok yönlü gelişime teşvik eden bir sanat akademisi
             </p>
           </div>
 
@@ -21,13 +65,44 @@ export default function Footer() {
           <div className="footer-col">
             <h4 className="footer-heading">Hızlı Menü</h4>
             <ul className="footer-menu">
-              <li><Link to="/">Anasayfa</Link></li>
-              <li><Link to="/hakkimizda">Hakkımızda</Link></li>
-              <li><Link to="/branslarimiz">Branşlarımız</Link></li>
-              <li><Link to="/atolyelerimiz">Atölyeler</Link></li>
-              <li><Link to="/uluslararasi-sinav-merkezi">Uluslararası Sınav Merkezi</Link></li>
-              <li><Link to="/guzel-sanatlar">Hazırlık Programları</Link></li>
-              <li><Link to="/iletisim">İletişim</Link></li>
+              <li>
+                <Link to="/" onClick={handleNavClick("/")}>
+                  Anasayfa
+                </Link>
+              </li>
+              <li>
+                <Link to="/hakkimizda" onClick={handleNavClick("/hakkimizda")}>
+                  Hakkımızda
+                </Link>
+              </li>
+              <li>
+                <Link to="/branslarimiz" onClick={handleNavClick("/branslarimiz")}>
+                  Branşlarımız
+                </Link>
+              </li>
+              <li>
+                <Link to="/atolyelerimiz" onClick={handleNavClick("/atolyelerimiz")}>
+                  Atölyeler
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/uluslararasi-sinav-merkezi"
+                  onClick={handleNavClick("/uluslararasi-sinav-merkezi")}
+                >
+                  Uluslararası Sınav Merkezi
+                </Link>
+              </li>
+              <li>
+                <Link to="/guzel-sanatlar" onClick={handleNavClick("/guzel-sanatlar")}>
+                  Hazırlık Programları
+                </Link>
+              </li>
+              <li>
+                <Link to="/iletisim" onClick={handleNavClick("/iletisim")}>
+                  İletişim
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -35,8 +110,8 @@ export default function Footer() {
           <div className="footer-col">
             <h4 className="footer-heading">İletişim Bilgileri</h4>
             <ul className="footer-contact-list">
-              <li>0553 210 99 33</li>
-              <li>Arvia@gmail.com</li>
+              <li>+90 (553) 210 99 33</li>
+              <li>arvia@gmail.com</li>
               <li>Hamidiye Mah. 4201 Sokak No:4, Çamlıbel, Akdeniz / Mersin</li>
               <li>Çalışma Saatleri: 09:00 - 22:00</li>
             </ul>
