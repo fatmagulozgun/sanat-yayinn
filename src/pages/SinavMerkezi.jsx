@@ -13,14 +13,16 @@ const SinavMerkezi = () => {
         </header>
 
         <section className="sinav-section">
-          <ul className="sinav-list">
-            <li>Royal School of Music (ABRSM)</li>
-            <li>London College of Music</li>
-            <li>Rock School</li>
-          </ul>
-          <p className="sinav-intro-end">
-            sınavlarının uygulandığı yetkili sınav merkezlerinden biridir.
-          </p>
+          <div className="sinav-section-inline">
+            <ul className="sinav-list">
+              <li>Royal School of Music (ABRSM)</li>
+              <li>London College of Music</li>
+              <li>Rock School</li>
+            </ul>
+            <span className="sinav-intro-end">
+              sınavlarının uygulandığı yetkili sınav merkezlerinden biridir.
+            </span>
+          </div>
         </section>
 
         <section className="sinav-content">

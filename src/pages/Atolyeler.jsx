@@ -13,77 +13,77 @@ const atolyeler = [
     baslik: "Seramik Bardak Yapımı",
     kategori: "seramik-dogal",
     aciklama:
-      "Bu atölyede katılımcılar, seramik sanatının temel şekillendirme tekniklerini uygulamalı olarak deneyimler. Tasarım süreci; çamurun hazırlanması, form verilmesi ve yüzey düzenleme aşamalarını kapsayacak şekilde planlanır. Katılımcılar kendi tasarladıkları bardakları üretme fırsatı bulur; üretim sürecinde sabır, el becerisi ve estetik bakış açısı geliştirir. Atölye sonunda ortaya çıkan özgün çalışmalar, sanatsal üretimin somut ve kalıcı bir deneyime dönüşmesini sağlar.",
+      "Katılımcılar seramik çamuruyla kendi bardak tasarımlarını oluşturur ve temel şekillendirme tekniklerini öğrenir. Form verme, düzeltme ve yüzey detaylandırma aşamaları uygulamalı olarak deneyimlenir. Atölye sonunda kişiye özel, kullanıma hazır özgün bir seramik bardak ortaya çıkar.",
   },
   {
     id: "bambu-sepet",
     baslik: "Bambudan Sepet Yapımı",
     kategori: "seramik-dogal",
     aciklama:
-      "Doğal malzeme ile üretim bilincini geliştirmeyi amaçlayan bu atölye, el sanatları geleneğini çağdaş bir yaklaşımla buluşturur. Katılımcılar bambu malzemenin yapısını tanır, temel örme tekniklerini öğrenir ve kendi sepet tasarımlarını oluşturur. Süreç boyunca el-göz koordinasyonu, dikkat ve sabır becerileri desteklenir. Bu çalışma aynı zamanda sürdürülebilir üretim anlayışını teşvik eden bir içerik sunar.",
+      "Doğal bambu malzemesiyle geleneksel örme teknikleri uygulanarak işlevsel sepetler üretilir. Katılımcılar sabır ve el koordinasyonu gerektiren üretim sürecini adım adım deneyimler. Çalışma sonunda hem dekoratif hem de kullanılabilir bir tasarım elde edilir.",
   },
   {
     id: "kabak-susleme",
     baslik: "Kabak Süsleme",
     kategori: "seramik-dogal",
     aciklama:
-      "Kabak Süsleme Atölyesi, doğal malzeme üzerinde dekoratif tasarım uygulamalarını öğretir. Katılımcılar yüzey süsleme teknikleri ile estetik ve özgün ürünler tasarlar.",
+      "Doğal kabak yüzeyleri temizlenir, oyma ve desen teknikleriyle özgün tasarımlar oluşturulur. Katılımcılar ışık ve form ilişkisini keşfederek dekoratif objeler tasarlar. Atölye sonunda estetik ve el yapımı bir dekor ürünü ortaya çıkar.",
   },
   {
     id: "makrome",
     baslik: "Makrome",
     kategori: "seramik-dogal",
     aciklama:
-      "Makrome Atölyesi, düğüm teknikleri ve ip düzenleme yöntemlerini sistemli bir şekilde öğretir. Katılımcılar el becerilerini geliştirirken dekoratif ve fonksiyonel tasarımlar üretir.",
+      "Makrome atölyesinde düğüm teknikleri öğrenilerek dekoratif tasarımlar hazırlanır. Katılımcılar ip ile form oluşturmanın temel prensiplerini uygulamalı şekilde deneyimler. Süreç sonunda duvar süsü ya da aksesuar olarak kullanılabilecek özgün bir ürün ortaya çıkar.",
   },
   {
     id: "bez-canta",
     baslik: "Bez Çanta Boyama",
     kategori: "boyama-yuzey",
     aciklama:
-      "Bez Çanta Boyama Atölyesi, tekstil yüzey üzerinde tasarım ve renk uygulama tekniklerini öğretir. Katılımcılar kendi özgün desenlerini oluşturur ve günlük kullanım için estetik ve işlevsel ürünler tasarlar.",
+      "Tekstil yüzey üzerinde tasarım ve renk uygulama tekniklerini öğretir. Katılımcılar kendi özgün desenlerini oluşturur ve günlük kullanım için estetik ve işlevsel ürünler tasarlar.",
   },
   {
     id: "ahsap-boyama",
     baslik: "Ahşap Boyama",
     kategori: "boyama-yuzey",
     aciklama:
-      "Ahşap Boyama Atölyesi, yüzey hazırlama ve dekoratif boyama tekniklerini uygulamalı olarak sunar. Katılımcılar renk, desen ve doku çalışmalarıyla estetik bakış açılarını geliştirir.",
+      "Yüzey hazırlama ve dekoratif boyama tekniklerini uygulamalı olarak sunar. Katılımcılar renk, desen ve doku çalışmalarıyla estetik bakış açılarını geliştirir.",
   },
   {
     id: "mandala",
     baslik: "Mandala",
     kategori: "boyama-yuzey",
     aciklama:
-      "Mandala Atölyesi, tekrar eden desenler ve noktalama tekniği ile konsantrasyon ve içsel dengeyi destekler. Katılımcılar tuval veya taş yüzey üzerinde ritmik ve simetrik tasarımlar oluşturur.",
+      "Tekrar eden desenler ve noktalama tekniği ile konsantrasyon ve içsel dengeyi destekler. Katılımcılar tuval veya taş yüzey üzerinde ritmik ve simetrik tasarımlar oluşturur.",
   },
   {
     id: "string-art",
-    baslik: "String Art",
+    baslik: "String Art (İp Çivi Sanatı)",
     kategori: "boyama-yuzey",
     aciklama:
-      "String Art Atölyesi, çivi ve ip kullanarak geometrik ve figüratif tasarımlar oluşturmayı öğretir. Katılımcılar planlama, ölçü ve kompozisyon becerilerini geliştirerek özgün çalışmalar üretir.",
+      "Çivi ve ip kullanarak geometrik ve figüratif tasarımlar oluşturmayı öğretir. Katılımcılar planlama, ölçü ve kompozisyon becerilerini geliştirerek özgün çalışmalar üretir.",
   },
   {
     id: "igne-kece",
     baslik: "İğne Keçe Figür",
     kategori: "tekstil-lif",
     aciklama:
-      "İğne Keçe Atölyesi, yün liflerinin şekillendirilmesiyle üç boyutlu figürler oluşturmayı öğretir. Katılımcılar detay odaklı çalışma ve el koordinasyonu becerilerini geliştirir.",
+      "Yün liflerinin şekillendirilmesiyle üç boyutlu figürler oluşturmayı öğretir. Katılımcılar detay odaklı çalışma ve el koordinasyonu becerilerini geliştirir.",
   },
   {
     id: "kece-bros",
     baslik: "Keçe Broş",
     kategori: "tekstil-lif",
     aciklama:
-      "Keçe Broş Tasarımı Atölyesi, tekstil temelli aksesuar üretimine odaklanır. Katılımcılar özgün tasarımlar geliştirir ve el emeği ürünler ortaya koyar.",
+      "Tekstil temelli aksesuar üretimine odaklanır. Katılımcılar özgün tasarımlar geliştirir ve el emeği ürünler ortaya koyar.",
   },
   {
     id: "hat-sanati",
     baslik: "Hat Sanatı",
     kategori: "geleneksel-estetik",
     aciklama:
-      "Hat Sanatı Atölyesi, geleneksel yazı sanatının temel tekniklerini öğretir. Katılımcılar harf formu, ölçü ve estetik denge üzerine çalışarak disiplinli bir üretim süreci deneyimler.",
+      "Geleneksel yazı sanatının temel tekniklerini öğretir. Katılımcılar harf formu, ölçü ve estetik denge üzerine çalışarak disiplinli bir üretim süreci deneyimler.",
   },
   {
     id: "icimdeki-cocukluk",
@@ -97,7 +97,7 @@ const atolyeler = [
     baslik: "Parfüm Yapımı",
     kategori: "duyusal-yaratici",
     aciklama:
-      "Parfüm Yapımı Atölyesi, koku notalarının yapısını ve uyumunu öğretmeyi amaçlar. Katılımcılar üst, orta ve alt notaları tanır; kendi kişisel koku formüllerini oluşturur. Bu süreç, duyusal farkındalığı ve yaratıcı üretim becerisini destekler.",
+      "Koku notalarının yapısını ve uyumunu öğretmeyi amaçlar. Katılımcılar üst, orta ve alt notaları tanır; kendi kişisel koku formüllerini oluşturur. Bu süreç, duyusal farkındalığı ve yaratıcı üretim becerisini destekler.",
   },
 ];
 
@@ -114,7 +114,7 @@ const atolyeGruplari = [
     id: "boyama-yuzey",
     baslik: "Boyama & Yüzey Tasarım Atölyeleri",
     aciklama:
-      "Doğal malzeme ile üretim bilincini geliştirmeyi amaçlayan bu atölye, el sanatları geleneğini çağdaş bir yaklaşımla buluşturur. Katılımcılar bambu malzemenin yapısını tanır, temel örme tekniklerini öğrenir ve kendi sepet tasarımlarını oluşturur. Süreç boyunca el-göz koordinasyonu, dikkat ve sabır becerileri desteklenir. Bu çalışma aynı zamanda sürdürülebilir üretim anlayışını teşvik eden bir içerik sunar.",
+      "Bu atölyede katılımcılar farklı yüzeyler üzerinde renk, doku ve desen uygulamalarını deneyimleyerek yaratıcı ifade alanlarını geliştirir. Ahşap, seramik ya da tuval gibi çeşitli materyaller üzerinde teknik bilgi ve estetik bakış açısı birlikte ele alınır. Süreç sonunda ortaya çıkan çalışmalar, katılımcının özgün tasarım anlayışını yansıtan kalıcı sanat ürünlerine dönüşür.",
     img: mandala,
     icon: FaPalette,
   },
@@ -122,7 +122,7 @@ const atolyeGruplari = [
     id: "tekstil-lif",
     baslik: "Tekstil & Lif Sanatları",
     aciklama:
-      "Psikoloji ve müziği bir araya getiren disiplinler arası bir çalışmadır. Uzman psikolog eşliğinde gerçekleştirilen bilgilendirme sürecinin ardından, canlı piyano dinletisi eşliğinde katılımcılar çocukluklarına ait bir anıyı resimle ifade eder; çalışmalar psikolojik değerlendirme ve farkındalık süreciyle ele alınır. Atölye, çocukluklarına yazılan mektuplarla tamamlanır ve katılımcıların duygusal içgörü geliştirmeleri hedeflenir.",
+      "Bu atölyede katılımcılar yün ve keçe malzemeleriyle üç boyutlu figürler ve özgün broş tasarımları üretir. İğne keçe tekniğiyle liflerin şekillendirilmesi adım adım uygulanarak sabır ve detay odaklı çalışma becerisi geliştirilir. Süreç sonunda hem dekoratif hem de kullanılabilir, tamamen el yapımı özgün tasarımlar ortaya çıkar.",
     img: kece,
     icon: FaTheaterMasks,
   },
@@ -130,7 +130,7 @@ const atolyeGruplari = [
     id: "geleneksel-estetik",
     baslik: "Geleneksel & Estetik Sanatlar",
     aciklama:
-      "Parfüm Yapımı Atölyesi, koku notalarının yapısını ve uyumunu öğretmeyi amaçlar. Katılımcılar üst, orta ve alt notaları tanır; kendi kişisel koku formüllerini oluşturur. Bu süreç, duyusal farkındalığı ve yaratıcı üretim becerisini destekler.",
+      "Bu atölyede katılımcılar hat sanatının temel yazı tekniklerini ve estetik kurallarını uygulamalı olarak öğrenir. Harf formu, ölçü ve kompozisyon dengesi üzerinde çalışılarak sabır ve dikkat gerektiren bir üretim süreci deneyimlenir. Atölye sonunda ortaya çıkan çalışmalar, geleneksel sanatın zarafetini yansıtan özgün eserler hâline dönüşür.",
     img: dd,
     icon: FaPaintBrush,
   },
@@ -138,7 +138,7 @@ const atolyeGruplari = [
     id: "psikoloji-farkindalik",
     baslik: "Psikoloji & Farkındalık Atölyeleri",
     aciklama:
-      "\"İçimdeki Çocukluğa Yolculuk\" atölyesi; psikoloji ve müziği bir araya getiren disiplinler arası bir çalışmadır. Uzman psikolog eşliğinde gerçekleştirilen bilgilendirme sürecinin ardından, canlı piyano dinletisi eşliğinde katılımcılar çocukluklarına ait bir anıyı resimle ifade eder; çalışmalar psikolojik değerlendirme ve farkındalık süreciyle ele alınır. Atölye, çocukluklarına yazılan mektuplarla tamamlanır ve katılımcıların duygusal içgörü geliştirmeleri hedeflenir.",
+      "Bu atölye, psikoloji ve sanatı bir araya getirerek katılımcıların içsel farkındalıklarını geliştirmeyi hedefler. Uzman psikolog eşliğinde gerçekleştirilen bilgilendirme sürecinin ardından, müzik ve resim aracılığıyla çocukluk anıları yaratıcı bir şekilde ifade edilir. Çalışma, yazılan mektuplar ve paylaşımlar eşliğinde tamamlanarak katılımcının duygusal içgörü kazanması desteklenir.",
     img: icimdekiCocuk,
     icon: FaTheaterMasks,
   },
@@ -146,7 +146,7 @@ const atolyeGruplari = [
     id: "duyusal-yaratici",
     baslik: "Duyusal & Yaratıcı Üretim",
     aciklama:
-      "Parfüm Yapımı Atölyesi, koku notalarının yapısını ve uyumunu öğretmeyi amaçlar. Katılımcılar üst, orta ve alt notaları tanır; kendi kişisel koku formüllerini oluşturur. Bu süreç, duyusal farkındalığı ve yaratıcı üretim becerisini destekler.",
+      "Bu atölyede katılımcılar esans notalarını tanıyarak koku hafızası ve duyusal farkındalık üzerine çalışır. Üst, orta ve alt notaların dengesi keşfedilerek kişiye özel parfüm formülleri oluşturulur. Süreç sonunda her katılımcı, karakterini yansıtan özgün ve imzalı bir parfüm tasarımıyla atölyeyi tamamlar.",
     img: parfum,
     icon: FaPaintBrush,
   },
@@ -187,12 +187,6 @@ const Atolyeler = () => {
       <div className="container">
         <header className="brans-header">
           <h1 className="brans-page-title">ATÖLYE (WORKSHOP) ÇALIŞMALARI</h1>
-          <p className="brans-intro">
-            Arvia Sanat olarak yalnızca düzenli eğitim programları sunmakla kalmıyor; deneyim odaklı,
-            disiplinler arası ve üretim temelli atölye çalışmaları da düzenliyoruz. Workshop
-            programlarımız, katılımcıların kısa süre içerisinde yoğunlaştırılmış bir içerikle hem
-            teknik beceri hem de kişisel farkındalık kazanmalarını hedefler.
-          </p>
         </header>
 
         <div className="brans-list">

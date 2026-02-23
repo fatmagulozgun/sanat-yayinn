@@ -91,7 +91,7 @@ const branslar = [
     id: "dans",
     baslik: "Dans Bölümü",
     aciklama:
-      "Dans bölümü; teknik disiplin, beden koordinasyonu ve sahne estetiği üzerine yapılandırılmıştır. Öğrencinin fiziksel gelişimi ve sahne özgüveni birlikte ele alınır.",
+      "Teknik disiplin, beden koordinasyonu ve sahne estetiği üzerine yapılandırılmıştır. Öğrencinin fiziksel gelişimi ve sahne özgüveni birlikte ele alınır.",
     img: dansImg,
     icon: FaChild,
     enstrumanlar: [
@@ -105,7 +105,7 @@ const branslar = [
     id: "tiyatro",
     baslik: "Tiyatro Bölümü",
     aciklama:
-      "Tiyatro bölümü; ifade gücü, özgüven ve sahne bilincini geliştirmeye yönelik yapılandırılmış bir eğitim programı sunar.",
+      "İfade gücü, özgüven ve sahne bilincini geliştirmeye yönelik yapılandırılmış bir eğitim programı sunar.",
     img: tiyatroImg,
     icon: FaTheaterMasks,
     enstrumanlar: [
@@ -160,13 +160,7 @@ const Branslarimiz = () => {
     <main className="brans-page">
       <div className="container">
         <header className="brans-header">
-          <h1 className="brans-page-title">Branşlarımız</h1>
-          <p className="brans-intro">
-            Arvia Sanat olarak müzik, resim, dans ve tiyatro alanlarında kapsamlı eğitim programları sunuyoruz.
-            Her branşta deneyimli eğitmenlerimiz ve çağdaş eğitim yöntemlerimizle yanınızdayız.
-            Uluslararası sınav hazırlıkları, güzel sanatlar ve konservatuvar hazırlık programları ile birlikte
-            her yaştan öğrencimize disiplinli, sistemli ve sürdürülebilir bir sanat eğitimi sunuyoruz.
-          </p>
+          <h1 className="brans-page-title">BRANŞLARIMIZ</h1>
         </header>
 
         <div className="brans-list">

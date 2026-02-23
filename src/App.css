@@ -850,6 +850,95 @@ a {  /*link etiketleri*/
         grid-template-columns: 1fr;
     }
 
+    .about-page .container {
+        padding: 20px 20px 32px;
+        max-width: 100%;
+        width: 100%;
+        align-items: stretch;
+        box-sizing: border-box;
+    }
+
+    .about-hero-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .about-hero-left {
+        order: 2;
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        text-align: left;
+    }
+
+    .about-hero-subtitle {
+        font-size: 0.75rem;
+        margin-bottom: 10px;
+        text-align: left;
+    }
+
+    .about-hero-heading {
+        font-size: clamp(20px, 5.5vw, 26px);
+        line-height: 1.35;
+        margin-bottom: 24px;
+        padding-right: 0;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        text-align: left;
+    }
+
+    .about-hero-intro {
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 0;
+        align-items: stretch;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .about-hero-mudur-photo {
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+        order: 1;
+    }
+
+    .about-hero-text {
+        order: 2;
+        width: 100%;
+        max-width: 100%;
+        text-align: left;
+    }
+
+    .about-hero-text p {
+        font-size: 0.9375rem;
+        text-align: left;
+    }
+
+    .about-hero-cta {
+        padding: 12px 20px;
+        font-size: 0.875rem;
+    }
+
+    .about-hero-video-section {
+        order: 1;
+        width: 100%;
+        max-width: 100%;
+        aspect-ratio: 16 / 9;
+        min-height: 180px;
+        max-height: none;
+        flex-shrink: 0;
+    }
+
+    .about-hero-video-section video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
     .about-media-section {
         grid-template-columns: 1fr;
         gap: 24px;
@@ -896,11 +985,382 @@ a {  /*link etiketleri*/
         margin: 0 auto;
     }
 
+    .about-bilgi-page .container {
+        padding: 20px 20px 40px;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .about-bilgi-layout {
+        display: flex;
+        flex-direction: column;
+        gap: 36px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .about-bilgi-bio {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .about-bilgi-bio-title {
+        font-size: 1.375rem;
+        margin-bottom: 20px;
+    }
+
+    .about-bilgi-bio-content p {
+        font-size: 0.9375rem;
+        line-height: 1.7;
+    }
+
+    .about-bilgi-timeline {
+        height: auto;
+        min-height: 0;
+        justify-content: flex-start;
+        align-items: stretch;
+        max-width: 100%;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .about-bilgi-timeline-line {
+        display: none;
+    }
+
+    .about-bilgi-timeline-item {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        margin: 0 0 24px 0;
+        padding: 0;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .about-bilgi-timeline-item:last-child {
+        margin-bottom: 0;
+    }
+
+    .about-bilgi-timeline-right .about-bilgi-timeline-side:first-child,
+    .about-bilgi-timeline-left .about-bilgi-timeline-side:last-child {
+        display: none;
+    }
+
+    .about-bilgi-timeline-side-card {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .about-bilgi-card {
+        padding: 20px 20px;
+        margin: 0;
+        max-width: none;
+        width: 100%;
+        text-align: left;
+        box-sizing: border-box;
+    }
+
+    .about-bilgi-card-title {
+        font-size: 1.125rem;
+        text-align: left;
+        margin-bottom: 12px;
+    }
+
+    .about-bilgi-card-content p {
+        font-size: 0.9375rem;
+        text-align: left;
+        line-height: 1.7;
+    }
+
 }
 
 /* HAKKIMIZDA SAYFASI */
 .about-page {
-    padding: 8px 0 48px;
+    padding: 8px 0 56px;
+    min-height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+.about-page .container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 0;
+    max-width: min(1520px, 96%);
+    padding: 24px 24px;
+}
+
+/* Hakkımızda - İki kolonlu hero (sol: metin+müdür, sağ: video) */
+.about-hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: stretch;
+    margin-top: 0;
+    width: 100%;
+}
+
+.about-hero-left {
+    min-width: 0;
+}
+
+.about-hero-subtitle {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 0 0 14px;
+}
+
+.about-hero-heading {
+    font-size: clamp(28px, 3vw, 38px);
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    margin: 0 0 28px;
+}
+
+.about-hero-intro {
+    display: flex;
+    gap: 28px;
+    align-items: flex-start;
+}
+
+.about-hero-mudur-photo {
+    flex-shrink: 0;
+    width: 260px;
+    aspect-ratio: 2 / 3;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+}
+
+.about-hero-mudur-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.about-hero-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.about-hero-text p {
+    font-size: 1rem;
+    color: var(--text);
+    line-height: 1.55;
+    margin: 0 0 18px;
+}
+
+.about-hero-text p:last-of-type {
+    margin-bottom: 20px;
+}
+
+.about-hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 24px;
+    background: var(--text);
+    color: #fff;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border-radius: var(--radius-sm);
+    transition: background 200ms ease, transform 120ms ease;
+}
+
+.about-hero-cta:hover {
+    background: var(--accent);
+    transform: translateY(-1px);
+}
+
+.about-hero-cta-icon {
+    font-size: 0.9em;
+}
+
+.about-hero-video-section {
+    position: relative;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    background: var(--cream-soft);
+    min-height: 280px;
+    max-height: 460px;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-hero-video-section video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* HAKKIMIZDA BİLGİ SAYFASI (Daha Fazla) */
+.about-bilgi-page {
+    padding: 32px 0 56px;
+    overflow-x: hidden;
+}
+
+.about-bilgi-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: stretch;
+}
+
+/* Sol sütun: biyografi */
+.about-bilgi-bio {
+    margin: 0;
+    max-width: none;
+}
+
+.about-bilgi-bio-title {
+    font-size: clamp(22px, 2.2vw, 28px);
+    font-weight: 600;
+    color: var(--text);
+    margin: 0 0 24px;
+    text-align: left;
+}
+
+.about-bilgi-bio-content p {
+    font-size: 1rem;
+    color: var(--text);
+    line-height: 1.8;
+    margin: 0 0 20px;
+    text-align: left;
+}
+
+.about-bilgi-bio-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Sağ sütun: çizgi + kartlar (sol metinle aynı yükseklikte biter) */
+.about-bilgi-timeline {
+    position: relative;
+    max-width: none;
+    margin: 0;
+    padding: 0 0 0 28px;
+    min-height: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.about-bilgi-timeline-line {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: repeating-linear-gradient(
+        to bottom,
+        #1e5a8a 0,
+        #1e5a8a 6px,
+        transparent 6px,
+        transparent 14px
+    );
+}
+
+.about-bilgi-timeline-item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 16px;
+    align-items: start;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
+}
+
+.about-bilgi-timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.about-bilgi-timeline-right .about-bilgi-timeline-side:first-child,
+.about-bilgi-timeline-left .about-bilgi-timeline-side:last-child {
+    display: none;
+}
+
+.about-bilgi-timeline-side-card {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0;
+    grid-column: 2;
+}
+
+.about-bilgi-timeline-right .about-bilgi-timeline-dot,
+.about-bilgi-timeline-left .about-bilgi-timeline-dot {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.about-bilgi-timeline-right .about-bilgi-timeline-side-card,
+.about-bilgi-timeline-left .about-bilgi-timeline-side-card {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.about-bilgi-timeline-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #1e5a8a;
+    flex-shrink: 0;
+    margin-top: 20px;
+}
+
+.about-bilgi-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 12px 20px;
+    text-align: center;
+    max-width: none;
+    width: 100%;
+}
+
+.about-bilgi-card-title {
+    font-size: clamp(18px, 1.8vw, 22px);
+    font-weight: 600;
+    color: #1e5a8a;
+    margin: 0 0 12px;
+    letter-spacing: -0.01em;
+}
+
+.about-bilgi-card-content p {
+    font-size: 0.875rem;
+    color: var(--text);
+    line-height: 1.65;
+    margin: 0 0 10px;
+    text-align: center;
+}
+
+.about-bilgi-card-content p:last-child {
+    margin-bottom: 0;
 }
 
 .about-hero {
@@ -1086,32 +1546,52 @@ a {  /*link etiketleri*/
 }
 
 /* ULUSLARARASI SINAV MERKEZİ SAYFASI */
+.sinav-page .brans-header,
+.guzel-sanatlar-page .brans-header {
+    margin-bottom: 20px;
+}
+
 .sinav-section {
-    margin-bottom: 28px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px 32px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow);
+}
+
+.sinav-section-inline {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .sinav-list {
     list-style: none;
-    margin: 0 0 12px;
+    margin: 0;
     padding: 0;
 }
 
 .sinav-list li {
     position: relative;
-    padding-left: 24px;
-    margin-bottom: 10px;
+    padding-left: 22px;
+    margin-bottom: 6px;
     font-size: 16px;
     font-weight: 600;
     color: var(--accent);
+}
+
+.sinav-list li:last-child {
+    margin-bottom: 0;
 }
 
 .sinav-list li::before {
     content: "";
     position: absolute;
     left: 0;
-    top: 10px;
-    width: 8px;
-    height: 8px;
+    top: 9px;
+    width: 7px;
+    height: 7px;
     border-radius: 50%;
     background: linear-gradient(135deg, var(--accent-light), var(--accent));
 }
@@ -1124,14 +1604,14 @@ a {  /*link etiketleri*/
 }
 
 .sinav-content {
-    margin-top: 24px;
+    margin-top: 20px;
 }
 
 .sinav-content p {
     font-size: 16px;
     color: var(--text);
     line-height: 1.7;
-    margin: 0 0 16px;
+    margin: 0 0 12px;
 }
 
 .sinav-content p:last-child {
@@ -1143,6 +1623,7 @@ a {  /*link etiketleri*/
 }
 
 .brans-page-title {
+    text-align: center;
     font-size: clamp(26px, 3vw, 34px);
     font-weight: 600;
     color: var(--text);
@@ -1803,6 +2284,7 @@ a.contact-card:focus {
 }
 
 .galeri-page-title {
+    text-align: center;
     font-size: clamp(26px, 3vw, 34px);
     font-weight: 600;
     color: var(--text);
@@ -1811,6 +2293,7 @@ a.contact-card:focus {
 }
 
 .galeri-intro {
+    text-align: center;
     font-size: 16px;
     color: var(--text-muted);
     line-height: 1.65;
@@ -1993,8 +2476,75 @@ a.contact-card:focus {
     }
 }
 
+/* HAKKIMIZDA – TABLET VE MOBİL: tek sütun düzen (992px altı) */
+@media (max-width: 992px) {
+    .about-hero-grid {
+        display: flex;
+        flex-direction: column;
+        grid-template-columns: unset;
+        grid-template-rows: unset;
+    }
+
+    .about-hero-left {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .about-hero-video-section {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .about-bilgi-layout {
+        display: flex;
+        flex-direction: column;
+        grid-template-columns: unset;
+    }
+
+    .about-bilgi-bio,
+    .about-bilgi-timeline {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
 /* HAKKIMIZDA – MOBİL DÜZEN OVERRIDE (en sona alındı ki diğerleri ezemesin) */
 @media (max-width: 820px) {
+    /* Hakkımızda Bilgi kartları: tam ortalanmış ve metinle hizalı olsun */
+    .about-bilgi-timeline {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .about-bilgi-timeline-line {
+        display: none;
+    }
+
+    .about-bilgi-timeline-item {
+        display: block;
+        grid-template-columns: none;
+        margin: 0 0 24px 0;
+    }
+
+    .about-bilgi-timeline-item:last-child {
+        margin-bottom: 0;
+    }
+
+    .about-bilgi-timeline-side-card {
+        grid-column: auto;
+        grid-row: auto;
+        padding: 0;
+        margin: 0;
+    }
+
+    .about-bilgi-card {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+    }
+
     .about-media-section {
         display: flex;
         flex-direction: column;
@@ -2030,6 +2580,55 @@ a.contact-card:focus {
 
     .about-media-text p {
         font-size: 14px;
+    }
+}
+
+/* Hakkımızda – çok küçük ekranlar (iPhone vb.) */
+@media (max-width: 480px) {
+    .about-page .container {
+        padding: 16px 16px 28px;
+    }
+
+    .about-hero-heading {
+        font-size: 1.25rem;
+        margin-bottom: 20px;
+        line-height: 1.4;
+    }
+
+    .about-hero-intro {
+        gap: 16px;
+    }
+
+    .about-hero-mudur-photo {
+        max-width: 100%;
+    }
+
+    .about-hero-text p {
+        font-size: 0.875rem;
+    }
+
+    .about-bilgi-page .container {
+        padding: 16px 16px 32px;
+    }
+
+    .about-bilgi-bio-title {
+        font-size: 1.25rem;
+    }
+
+    .about-bilgi-bio-content p {
+        font-size: 0.9375rem;
+    }
+
+    .about-bilgi-card {
+        padding: 18px 16px;
+    }
+
+    .about-bilgi-card-title {
+        font-size: 1.0625rem;
+    }
+
+    .about-bilgi-card-content p {
+        font-size: 0.875rem;
     }
 }
 

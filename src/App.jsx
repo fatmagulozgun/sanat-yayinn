@@ -11,6 +11,7 @@ const Atolyeler = lazy(() => import("./pages/Atolyeler"));
 const Branslarimiz = lazy(() => import("./pages/Branslarimiz"));
 const SinavMerkezi = lazy(() => import("./pages/SinavMerkezi"));
 const GuzelSanatlar = lazy(() => import("./pages/GuzelSanatlar"));
+const AboutBilgi = lazy(() => import("./pages/AboutBilgi"));
 function App() {
   return (
     <Suspense fallback={null}>
@@ -21,6 +22,7 @@ function App() {
           <Route path="/branslarimiz" element={<Branslarimiz />} />
           <Route path="/atolyelerimiz" element={<Atolyeler />} />
           <Route path="/galeri" element={<Galeri />} />
+          <Route path="/hakkimizda-bilgi" element={<AboutBilgi />} />
           <Route path="/iletisim" element={<Contact />} />
           <Route
             path="/uluslararasi-sinav-merkezi"
