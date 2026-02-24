@@ -1,62 +1,81 @@
 import React, { useState, useEffect } from "react";
 import img2 from "../resimler/im2.webp";
+import img2K from "../resimler/im2K.webp";
 import img4 from "../resimler/im4.webp";
+import img4K from "../resimler/im4K.webp";
 import img9 from "../resimler/im9.webp";
+import img9K from "../resimler/im9K.webp";
 import img10 from "../resimler/im10.webp";
+import img10K from "../resimler/im10K.webp";
 import sepet from "../resimler/sepet.webp";
+import sepetK from "../resimler/sepetK.webp";
 import mandala from "../resimler/mandala.webp";
+import mandalaK from "../resimler/mandalaK.webp";
 import kece from "../resimler/kece.webp";
+import keceK from "../resimler/keceK.webp";
 import psikoloji from "../resimler/psikoloji.webp";
+import psikolojiK from "../resimler/psikolojiK.webp";
 import icimdekiCocuk from "../resimler/icimdekiCocuk.webp";
+import icimdekiCocukK from "../resimler/icimdekiCocukK.webp";
 import parfum from "../resimler/parfum.webp";
+import parfumK from "../resimler/parfumK.webp";
 import baglama from "../resimler/baglam.webp";
+import baglamaK from "../resimler/baglamK.webp";
 import bater from "../resimler/bater.webp";
+import baterK from "../resimler/baterK.webp";
 import klarnet from "../resimler/klarnet.webp";
-import ne1 from "../resimler/ne1.webp";
+import klarnetK from "../resimler/klarnetK.webp";
 import ne2 from "../resimler/ne2.webp";
+import ne2K from "../resimler/ne2K.webp";
 import ne3 from "../resimler/ne3.webp";
+import ne3K from "../resimler/ne3K.webp";
 import ne4 from "../resimler/ne4.webp";
+import ne4K from "../resimler/ne4K.webp";
 import ne6 from "../resimler/ne6.webp";
+import ne6K from "../resimler/ne6K.webp";
 import ne7 from "../resimler/ne7.webp";
-import pp from "../resimler/pp.webp";
-import pp1 from "../resimler/pp1.webp";
-import pp2 from "../resimler/pp2.webp";
-import pp3 from "../resimler/pp3.webp";
-import pp4 from "../resimler/pp4.webp";
-import pp5 from "../resimler/pp5.webp";
-import pp6 from "../resimler/pp6.webp";
-import pp7 from "../resimler/pp7.webp";
-import pp8 from "../resimler/pp8.webp";
-import pp9 from "../resimler/pp9.webp";
+import ne7K from "../resimler/ne7K.webp";
+import sa1 from "../resimler/sa1.webp";
+import sa1K from "../resimler/sa1K.webp";
+import sa2 from "../resimler/sa2.webp";
+import sa4 from "../resimler/sa4.webp";
+import sa4K from "../resimler/sa4K.webp";
+import sa5 from "../resimler/sa5.webp";
+import sa5K from "../resimler/sa5K.webp";
+import sa7 from "../resimler/sa7.webp";
+import sa7K from "../resimler/sa7K.webp";
+import sa8 from "../resimler/sa8.webp";
+import sa8K from "../resimler/sa8K.webp";
+import imageeee from "../resimler/imageeee.webp";
+import imageeeeK from "../resimler/imageeeeK.webp";
 
-import gitar from "../resimler/gitar.webp";
 const galeriResimleri = [
-  { src: img2, alt: "Arvia Sanat atölye" },
-  { src: bater, alt: "Arvia Sanat atölye" },
-  { src: img4, alt: "Arvia Sanat atölye" },
-  { src: img9, alt: "Arvia Sanat atölye" },
-  { src: pp2, alt: "Arvia Sanat atölye" },
-  { src: img10, alt: "Arvia Sanat atölye" },
-  { src: sepet, alt: "Arvia Sanat atölye" },
-  { src: kece, alt: "Arvia Sanat atölye" },
-  { src: gitar, alt: "Arvia Sanat atölye" },
-  { src: psikoloji, alt: "Arvia Sanat atölye" },
-  { src: pp9, alt: "Arvia Sanat atölye" },
-  { src: parfum, alt: "Arvia Sanat atölye" },
-  { src: pp, alt: "Arvia Sanat atölye" },
-  { src: baglama, alt: "Arvia Sanat atölye" },
-  { src: ne1, alt: "Arvia Sanat atölye" },
-  { src: ne2, alt: "Arvia Sanat atölye" },
-  { src: mandala, alt: "Arvia Sanat atölye" },
-  { src: ne4, alt: "Arvia Sanat atölye" },
-  { src: ne6, alt: "Arvia Sanat atölye" },
-  { src: ne3, alt: "Arvia Sanat atölye" },
-  { src: pp2, alt: "Arvia Sanat atölye" },
-  { src: klarnet, alt: "Arvia Sanat atölye" },
-  { src: pp6, alt: "Arvia Sanat atölye" },
-  { src: pp8, alt: "Arvia Sanat atölye" },
-  { src: icimdekiCocuk, alt: "Arvia Sanat atölye" },
+  { src: img2, thumb: img2K, alt: "Arvia Sanat atölye" },
+  { src: bater, thumb: baterK, alt: "Arvia Sanat atölye" },
+  { src: img4, thumb: img4K, alt: "Arvia Sanat atölye" },
+  { src: img9, thumb: img9K, alt: "Arvia Sanat atölye" },
+  { src: sa7, thumb: sa7K, alt: "Arvia Sanat atölye" },
+  { src: img10, thumb: img10K, alt: "Arvia Sanat atölye" },
+  { src: sa1, thumb: sa1K, alt: "Arvia Sanat atölye" },
+  { src: sepet, thumb: sepetK, alt: "Arvia Sanat atölye" },
+  { src: kece, thumb: keceK, alt: "Arvia Sanat atölye" },
+  { src: psikoloji, thumb: psikolojiK, alt: "Arvia Sanat atölye" },
+  { src: parfum, thumb: parfumK, alt: "Arvia Sanat atölye" },
+  { src: sa8, thumb: sa8K, alt: "Arvia Sanat atölye" },
+  { src: baglama, thumb: baglamaK, alt: "Arvia Sanat atölye" },
+  { src: ne7, thumb: ne7K, alt: "Arvia Sanat atölye" },
+  { src: ne2, thumb: ne2K, alt: "Arvia Sanat atölye" },
+  { src: mandala, thumb: mandalaK, alt: "Arvia Sanat atölye" },
+  { src: ne4, thumb: ne4K, alt: "Arvia Sanat atölye" },
+  { src: sa4, thumb: sa4K, alt: "Arvia Sanat atölye" },
+  { src: ne6, thumb: ne6K, alt: "Arvia Sanat atölye" },
+  { src: ne3, thumb: ne3K, alt: "Arvia Sanat atölye" },
+  { src: klarnet, thumb: klarnetK, alt: "Arvia Sanat atölye" },
+  { src: imageeee, thumb: imageeeeK, alt: "Arvia Sanat atölye" },
+  { src: sa5, thumb: sa5K, alt: "Arvia Sanat atölye" },
+  { src: icimdekiCocuk, thumb: icimdekiCocukK, alt: "Arvia Sanat atölye" },
 ];
+
 
 const Galeri = () => {
   const [seciliIndex, setSeciliIndex] = useState(null);
@@ -128,7 +147,7 @@ const Galeri = () => {
             >
               <div className="galeri-kart-image">
                 <img
-                  src={resim.src}
+                  src={resim.thumb || resim.src}
                   alt={resim.alt}
                   loading="lazy"
                   width={600}
@@ -178,6 +197,8 @@ const Galeri = () => {
               <img
                 src={galeriResimleri[seciliIndex].src}
                 alt={galeriResimleri[seciliIndex].alt}
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <button

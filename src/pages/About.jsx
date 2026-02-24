@@ -1,8 +1,8 @@
 import React, { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaExternalLinkAlt } from "react-icons/fa";
-import mudurImg from "../resimler/mudurr.webp";
-import tanitimVideo from "../resimler/Tanıtım-filmi.mp4";
+import mudurImg from "../resimler/mudurrH.webp";
+import tanitimVideo from "../resimler/Tanitim-film.mp4";
 
 const About = () => {
   const videoRef = useRef(null);

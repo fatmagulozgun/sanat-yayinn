@@ -6,7 +6,7 @@ const AboutBilgi = () => {
       <div className="container">
         <div className="about-bilgi-layout">
         <section className="about-bilgi-bio">
-          <h2 className="about-bilgi-bio-title">Kurum Müdürü: Erol Ermetal</h2>
+          <h2 className="about-bilgi-bio-title">Kurum Müdürü: Erol ERMETAL</h2>
           <div className="about-bilgi-bio-content">
             <p>
               Sanat yolculuğuma yıllar önce müzikle başladım ve bugün 18 yıllık öğretmenlik deneyimimin birikimiyle Arvia Sanat'ı yönetiyorum. Benim için müzik hiçbir zaman yalnızca bir ders olmadı; bir ifade biçimi, bir disiplin ve bir yaşam anlayışı oldu.

@@ -57,7 +57,7 @@ export default function Footer() {
               <img src={logoImg} alt="Arvia Sanat" className="footer-logo-img" />
             </Link>
             <p className="footer-desc">
-              Müzik, resim, dans ve tiyatro alanlarında profesyonel eğitim sunan, öğrencilerini çok yönlü gelişime teşvik eden bir sanat akademisi
+              Müzik, resim, dans ve tiyatro alanlarında profesyonel eğitim sunan, öğrencilerini çok yönlü gelişime teşvik eden bir sanat akademisi.
             </p>
           </div>
 
@@ -112,7 +112,7 @@ export default function Footer() {
             <ul className="footer-contact-list">
               <li>+90 (553) 210 99 33</li>
               <li>arvia@gmail.com</li>
-              <li>Hamidiye Mah. 4201 Sokak No:4, Çamlıbel, Akdeniz / Mersin</li>
+              <li>Hamidiye Mah. 4201 Sokak No:4, Çamlıbel, Akdeniz / MERSİN</li>
               <li>Çalışma Saatleri: 09:00 - 22:00</li>
             </ul>
           </div>

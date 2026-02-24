@@ -1,19 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaAward, FaPalette } from "react-icons/fa";
-import musicImg from "../resimler/music.webp";
-import resimImg from "../resimler/resim.webp";
-import dansImg from "../resimler/dans.webp";
-import tiyatroImg from "../resimler/tiyatro.webp";
-import img1 from "../resimler/im1.webp";
-import img2 from "../resimler/im2.webp";
-import img3 from "../resimler/im3.webp";
-import img4 from "../resimler/im4.webp";
-import img9 from "../resimler/im9.webp";
-import img10 from "../resimler/im10.webp";
-import parfum from "../resimler/parfum.webp";
-import sepet from "../resimler/sepet.webp";
-import mandala from "../resimler/mandala.webp";
+import musicImg from "../resimler/musicK.webp";
+import resimImg from "../resimler/resimK.webp";
+import dansImg from "../resimler/dansK.webp";
+import tiyatroImg from "../resimler/tiyatroK.webp";
+import img1 from "../resimler/im1S.webp";
+import img2 from "../resimler/im2S.webp";
+import img3 from "../resimler/im3S.webp";
+import img4 from "../resimler/im4S.webp";
+import img9 from "../resimler/im9S.webp";
+import img10 from "../resimler/im10S.webp";
+import parfum from "../resimler/parfumS.webp";
+import parfumK from "../resimler/parfumK.webp";
+import sepet from "../resimler/sepetA.webp";
+import parfumA from "../resimler/parfumA.webp";
+import mandala from "../resimler/mandalaA.webp";
 
 const slides = [
   { id: 0, src: img3 },
@@ -130,6 +132,29 @@ const Home = () => {
                   height={480}
                 />
               ))}
+
+              <button
+                type="button"
+                className="hero-slider-arrow hero-slider-arrow-left"
+                aria-label="Önceki görsel"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
+                }}
+              >
+                ‹
+              </button>
+              <button
+                type="button"
+                className="hero-slider-arrow hero-slider-arrow-right"
+                aria-label="Sonraki görsel"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setCurrentIndex((prev) => (prev + 1) % slides.length);
+                }}
+              >
+                ›
+              </button>
             </div>
 
             <div className="hero-slider-indicators" aria-hidden="true">
@@ -186,7 +211,7 @@ const Home = () => {
           </div>
           <div className="atolyeler-image-card">
             <img
-              src={parfum}
+              src={parfumA}
               alt="Arvia Sanat atölye görseli 2"
               loading="lazy"
               width={600}
