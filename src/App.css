@@ -257,6 +257,7 @@ a {
 }
 
 .footer-desc {
+    text-align: center;
     font-size: 14px;
     line-height: 1.65;
     color: rgba(255, 255, 255, 0.75);
