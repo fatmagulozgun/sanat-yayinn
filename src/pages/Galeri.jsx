@@ -37,9 +37,9 @@ import ne7 from "../resimler/ne7.webp";
 import ne7K from "../resimler/ne7K.webp";
 import sa1 from "../resimler/sa1.webp";
 import sa1K from "../resimler/sa1K.webp";
-import sa2 from "../resimler/sa2.webp";
+import yeni from "../resimler/yeni.webp";
+import yeniK from "../resimler/yeniK.webp";
 import sa4 from "../resimler/sa4.webp";
-import sa4K from "../resimler/sa4K.webp";
 import sa5 from "../resimler/sa5.webp";
 import sa5K from "../resimler/sa5K.webp";
 import sa7 from "../resimler/sa7.webp";
@@ -48,6 +48,8 @@ import sa8 from "../resimler/sa8.webp";
 import sa8K from "../resimler/sa8K.webp";
 import imageeee from "../resimler/imageeee.webp";
 import imageeeeK from "../resimler/imageeeeK.webp";
+import yenii from "../resimler/yenii.webp";
+import yeniiK from "../resimler/yeniiK.webp";
 
 const galeriResimleri = [
   { src: img2, thumb: img2K, alt: "Arvia Sanat atölye" },
@@ -64,13 +66,14 @@ const galeriResimleri = [
   { src: sa8, thumb: sa8K, alt: "Arvia Sanat atölye" },
   { src: baglama, thumb: baglamaK, alt: "Arvia Sanat atölye" },
   { src: ne7, thumb: ne7K, alt: "Arvia Sanat atölye" },
+  { src: yenii, thumb: yeniiK, alt: "Arvia Sanat atölye" },
   { src: ne2, thumb: ne2K, alt: "Arvia Sanat atölye" },
   { src: mandala, thumb: mandalaK, alt: "Arvia Sanat atölye" },
   { src: ne4, thumb: ne4K, alt: "Arvia Sanat atölye" },
-  { src: sa4, thumb: sa4K, alt: "Arvia Sanat atölye" },
   { src: ne6, thumb: ne6K, alt: "Arvia Sanat atölye" },
   { src: ne3, thumb: ne3K, alt: "Arvia Sanat atölye" },
   { src: klarnet, thumb: klarnetK, alt: "Arvia Sanat atölye" },
+  { src: yeni, thumb: yeniK, alt: "Arvia Sanat atölye" },
   { src: imageeee, thumb: imageeeeK, alt: "Arvia Sanat atölye" },
   { src: sa5, thumb: sa5K, alt: "Arvia Sanat atölye" },
   { src: icimdekiCocuk, thumb: icimdekiCocukK, alt: "Arvia Sanat atölye" },
