@@ -8,11 +8,8 @@ import tiyatroImg from "../resimler/tiyatroK.webp";
 import img1 from "../resimler/im1S.webp";
 import img2 from "../resimler/im2S.webp";
 import img3 from "../resimler/im3S.webp";
-import img4 from "../resimler/im4S.webp";
 import img9 from "../resimler/im9S.webp";
-import img10 from "../resimler/im10S.webp";
 import parfum from "../resimler/parfumS.webp";
-import parfumK from "../resimler/parfumK.webp";
 import sepet from "../resimler/sepetA.webp";
 import parfumA from "../resimler/parfumA.webp";
 import mandala from "../resimler/mandalaA.webp";
@@ -20,9 +17,7 @@ import mandala from "../resimler/mandalaA.webp";
 const slides = [
   { id: 0, src: img3 },
   { id: 2, src: img1 },
-  { id: 3, src: img4 },
   { id: 4, src: img2 },
-  { id: 5, src: img10 },
   { id: 6, src: img9 },
   { id: 7, src: parfum },
 ];
@@ -174,6 +169,7 @@ const Home = () => {
       </div>
     </section>
 
+    {/* Branşlarımız ve Atölyelerimiz Bölümü*/}
     <section className="home-programs">
       <div className="container">
         <h2 className="home-section-title">Branşlarımız</h2>
@@ -198,6 +194,7 @@ const Home = () => {
           ))}
         </div>
 
+        {/* Atölyelerimiz Bölümü*/}
         <h2 className="home-section-title">Atölyelerimiz</h2>
         <div className="atolyeler-images-row">
           <div className="atolyeler-image-card">
@@ -238,6 +235,7 @@ const Home = () => {
       </div>
     </section>
 
+    {/* Premium Bloklarımız Bölümü*/}
     <section className="home-premium-blocks">
       <div className="container premium-blocks-inner">
         <div className="premium-block">

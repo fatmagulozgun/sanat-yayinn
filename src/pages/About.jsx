@@ -1,17 +1,17 @@
 import React, { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaExternalLinkAlt } from "react-icons/fa";
-import mudurImg from "../resimler/mudurrH.webp";
-import tanitimVideo from "../resimler/Tanitim-film.mp4";
+import mudurImg from "../resimler/mudurr.webp";
+import tanitimVideo from "../resimler/Revize2.mp4";
 
 const About = () => {
-  const videoRef = useRef(null);
+  const videoRef = useRef(null); //useRef ile video etiketini bul
 
   useEffect(() => {
-    const video = videoRef.current;
+    const video = videoRef.current; //html video etiketini bul
     if (video) {
-      video.muted = true;
-      video.play().catch(() => { });
+      video.muted = true; //video sesi kapat
+      video.play().catch(() => { }); //video oynatılırken hata olursa hata yakalama
     }
   }, []);
 

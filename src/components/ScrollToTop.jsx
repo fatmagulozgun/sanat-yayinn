@@ -5,26 +5,19 @@ export default function ScrollToTop() {
   const location = useLocation();
 
   useEffect(() => {
-
     const scrollToTop = () => {
+      window.scrollTo(0, 0); //sayfayı en üste kaydır
+      document.body.scrollTop = 0; //body etiketini en üste kaydır
+      document.documentElement.scrollTop = 0; //html etiketini en üste kaydır
 
-      // window
-      window.scrollTo(0, 0);
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
-
-      // gerçek scroll containerı bul
-      const scrollable = document.querySelector("main");
-      if (scrollable) {
-        scrollable.scrollTop = 0;
+      const scrollable = document.querySelector("main"); //main etiketini bul
+      if (scrollable) { //main etiketini bul
+        scrollable.scrollTop = 0; //main etiketini en üste kaydır
       }
 
     };
-
-    // render bittikten sonra çalışsın
     requestAnimationFrame(scrollToTop);
-
-  }, [location.pathname]);
+  }, [location.pathname]); //url her değiştiğinde
 
   return null;
 }

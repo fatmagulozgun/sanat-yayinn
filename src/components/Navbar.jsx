@@ -5,7 +5,7 @@ import logoImg from "../resimler/resim-logo.webp";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-
+  const MAP_COORDINATES = "36.788437,34.61956";
   const closeMenu = () => setMenuOpen(false);
 
   return (
@@ -21,19 +21,19 @@ export default function Navbar() {
 
         <div className={`navLinks ${menuOpen ? "is-open" : ""}`}>
           <NavLink end className="navLink" to="/" onClick={closeMenu}>Ana Sayfa</NavLink>
-          <NavLink className="navLink" to="/hakkimizda" onClick={closeMenu}>Hakkımızda</NavLink>
           <NavLink className="navLink" to="/branslarimiz" onClick={closeMenu}>Branşlarımız</NavLink>
           <NavLink className="navLink" to="/atolyelerimiz" onClick={closeMenu}>Atölyelerimiz</NavLink>
           <NavLink className="navLink" to="/galeri" onClick={closeMenu}>Galeri</NavLink>
+          <NavLink className="navLink" to="/hakkimizda" onClick={closeMenu}>Hakkımızda</NavLink>
           <NavLink className="navLink" to="/iletisim" onClick={closeMenu}>İletişim</NavLink>
         </div>
+        
         <div className="navbar-social">
           <a
             href="https://instagram.com/arvia.sanat"
             target="_blank"
             rel="noopener noreferrer"
             className="navbar-social-link"
-            aria-label="Instagram"
           >
             <FaInstagram />
           </a>
@@ -42,18 +42,16 @@ export default function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             className="navbar-social-link"
-            aria-label="WhatsApp"
           >
             <FaWhatsapp />
           </a>
 
           <a
-            href="https://www.google.com/maps/search/?api=1&query=Hamidiye+mah,+4201+sokak+no:4,+%C3%87aml%C4%B1bel,+Akdeniz,+Mersin"
+            href={`https://www.google.com/maps/search/?api=1&query=${MAP_COORDINATES}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="navbar-social-link"
-            aria-label="Google Maps"
-          >
+            className="navbar-social-link"            
+           >
             <FaMapMarkerAlt />
           </a>
         </div>

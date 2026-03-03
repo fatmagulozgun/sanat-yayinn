@@ -5,6 +5,7 @@ import musicImg from "../resimler/music.webp";
 import resimImg from "../resimler/resim.webp";
 import dansImg from "../resimler/dans.webp";
 import tiyatroImg from "../resimler/tiyatro.webp";
+import mkl from "../resimler/mke.webp";
 
 const enstrumanAciklamalari = {
   "Piyano":
@@ -64,7 +65,7 @@ const branslar = [
     id: "muzik",
     baslik: "Müzik Bölümü",
     aciklama: "Bireysel enstrüman eğitimi, teorik altyapı ve performans deneyimini bütüncül bir sistem içerisinde sunar. Eğitim süreci; teknik gelişim, müzikal ifade ve sahne deneyimi olmak üzere üç temel eksende ilerler.",
-    img: musicImg,
+    img: mkl,
     icon: FaMusic,
     enstrumanlar: [
       "Piyano", "Keman", "Gitar", "Bağlama", "Bateri", "Darbuka-Perküsyon",
@@ -116,9 +117,8 @@ const branslar = [
   },
 ];
 
-
 const Branslarimiz = () => {
-  const { hash } = useLocation();
+  const { hash } = useLocation(); // # ile başlayan hash değerini al
   const [seciliEnstruman, setSeciliEnstruman] = useState(null);
 
   const handleEnstrumanClick = (enstruman) => {

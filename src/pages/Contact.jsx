@@ -1,8 +1,9 @@
 import React from "react";
 import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock, FaInstagram, FaWhatsapp } from "react-icons/fa";
 
-const MAP_ADDRESS = "Hamidiye+mah,+4201+sokak+no:4+camlibel+akdeniz+mersin";
-const MAP_EMBED_URL = `https://maps.google.com/maps?q=${MAP_ADDRESS}&t=&z=16&ie=UTF8&iwloc=&output=embed`;
+// Konum: 36°47'18.4"N 34°37'10.4"E
+const MAP_COORDINATES = "36.788437,34.61956";
+const MAP_EMBED_URL = `https://maps.google.com/maps?q=${MAP_COORDINATES}&t=&z=16&ie=UTF8&iwloc=&output=embed`;
 
 const Contact = () => {
   return (
@@ -13,7 +14,7 @@ const Contact = () => {
             <h2 className="contact-section-title">İletişim Bilgileri</h2>
             <div className="contact-cards">
               <a
-                href="https://www.google.com/maps/search/?api=1&query=Hamidiye+mah,+4201+sokak+no:4,+%C3%87aml%C4%B1bel,+Akdeniz,+Mersin"
+                href={`https://www.google.com/maps/search/?api=1&query=${MAP_COORDINATES}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="contact-card"
@@ -63,7 +64,7 @@ const Contact = () => {
                 <a href="https://wa.me/905532109933" target="_blank" rel="noopener noreferrer" className="contact-social-link" aria-label="WhatsApp">
                   <FaWhatsapp />
                 </a>
-                <a href="https://www.google.com/maps/search/?api=1&query=Hamidiye+mah,+4201+sokak+no:4,+%C3%87aml%C4%B1bel,+Akdeniz,+Mersin" target="_blank" rel="noopener noreferrer" className="contact-social-link" aria-label="Google Maps">
+                <a href={`https://www.google.com/maps/search/?api=1&query=${MAP_COORDINATES}`} target="_blank" rel="noopener noreferrer" className="contact-social-link" aria-label="Google Maps">
                 <FaMapMarkerAlt />
                 </a>
               </div>
