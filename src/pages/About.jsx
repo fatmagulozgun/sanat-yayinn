@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import mudurImg from "../resimler/mudurr.webp";
-import tanitimVideo from "../resimler/Revize2.mp4";
+import tanitimVideo from "../resimler/Revizee2.mp4";
 
 const About = () => {
   const videoRef = useRef(null); //useRef ile video etiketini bul
