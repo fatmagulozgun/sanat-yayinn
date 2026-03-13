@@ -1782,6 +1782,11 @@ a {
     transition: border-color 180ms ease, box-shadow 180ms ease;
 }
 
+.brans-detail:nth-child(n+2) {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 500px;
+}
+
 .brans-detail:hover {
     border-color: var(--accent-border);
     box-shadow: var(--shadow);
@@ -1806,6 +1811,7 @@ a {
     aspect-ratio: 4/3;
     object-fit: cover;
     display: block;
+    background-color: var(--cream-soft);
 }
 
 .brans-detail-content {

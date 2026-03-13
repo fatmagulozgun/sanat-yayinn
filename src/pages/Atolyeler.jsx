@@ -1,11 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { FaPalette, FaHandSparkles, FaTheaterMasks, FaPaintBrush } from "react-icons/fa";
-import sepet from "../resimler/sepet.webp";
-import mandala from "../resimler/mandala.webp";
+
+import sepetK from "../resimler/sepetK.webp";
+import sepetA from "../resimler/sepetA.webp";
+import mandalaK from "../resimler/mandalaK.webp";
+import mandalaA from "../resimler/mandalaA.webp";
+import keceK from "../resimler/keceK.webp";
 import kece from "../resimler/kece.webp";
+import ddK from "../resimler/ddK.webp";
 import dd from "../resimler/dd.webp";
+import icimdekiCocukK from "../resimler/icimdekiCocukK.webp";
 import icimdekiCocuk from "../resimler/icimdekiCocuk.webp";
-import parfum from "../resimler/parfum.webp";
+import parfumK from "../resimler/parfumK.webp";
+import parfumS from "../resimler/parfumS.webp";
 
 const atolyeler = [
   {
@@ -107,7 +114,8 @@ const atolyeGruplari = [
     baslik: "Seramik & Doğal Malzeme Atölyeleri",
     aciklama:
       "Bu atölyede katılımcılar, seramik sanatının temel şekillendirme tekniklerini uygulamalı olarak deneyimler. Tasarım süreci; çamurun hazırlanması, form verilmesi ve yüzey düzenleme aşamalarını kapsayacak şekilde planlanır. Katılımcılar kendi tasarladıkları bardakları üretme fırsatı bulur; üretim sürecinde sabır, el becerisi ve estetik bakış açısı geliştirir. Atölye sonunda ortaya çıkan özgün çalışmalar, sanatsal üretimin somut ve kalıcı bir deneyime dönüşmesini sağlar.",
-    img: sepet,
+    img: sepetK,
+    imgLarge: sepetA,
     icon: FaHandSparkles,
   },
   {
@@ -115,7 +123,8 @@ const atolyeGruplari = [
     baslik: "Boyama & Yüzey Tasarım Atölyeleri",
     aciklama:
       "Bu atölyede katılımcılar farklı yüzeyler üzerinde renk, doku ve desen uygulamalarını deneyimleyerek yaratıcı ifade alanlarını geliştirir. Ahşap, seramik ya da tuval gibi çeşitli materyaller üzerinde teknik bilgi ve estetik bakış açısı birlikte ele alınır. Süreç sonunda ortaya çıkan çalışmalar, katılımcının özgün tasarım anlayışını yansıtan kalıcı sanat ürünlerine dönüşür.",
-    img: mandala,
+    img: mandalaK,
+    imgLarge: mandalaA,
     icon: FaPalette,
   },
   {
@@ -123,7 +132,8 @@ const atolyeGruplari = [
     baslik: "Tekstil & Lif Sanatları",
     aciklama:
       "Bu atölyede katılımcılar yün ve keçe malzemeleriyle üç boyutlu figürler ve özgün broş tasarımları üretir. İğne keçe tekniğiyle liflerin şekillendirilmesi adım adım uygulanarak sabır ve detay odaklı çalışma becerisi geliştirilir. Süreç sonunda hem dekoratif hem de kullanılabilir, tamamen el yapımı özgün tasarımlar ortaya çıkar.",
-    img: kece,
+    img: keceK,
+    imgLarge: kece,
     icon: FaTheaterMasks,
   },
   {
@@ -131,7 +141,8 @@ const atolyeGruplari = [
     baslik: "Geleneksel & Estetik Sanatlar",
     aciklama:
       "Bu atölyede katılımcılar hat sanatının temel yazı tekniklerini ve estetik kurallarını uygulamalı olarak öğrenir. Harf formu, ölçü ve kompozisyon dengesi üzerinde çalışılarak sabır ve dikkat gerektiren bir üretim süreci deneyimlenir. Atölye sonunda ortaya çıkan çalışmalar, geleneksel sanatın zarafetini yansıtan özgün eserler hâline dönüşür.",
-    img: dd,
+    img: ddK,
+    imgLarge: dd,
     icon: FaPaintBrush,
   },
   {
@@ -139,7 +150,8 @@ const atolyeGruplari = [
     baslik: "Psikoloji & Farkındalık Atölyeleri",
     aciklama:
       "Bu atölye, psikoloji ve sanatı bir araya getirerek katılımcıların içsel farkındalıklarını geliştirmeyi hedefler. Uzman psikolog eşliğinde gerçekleştirilen bilgilendirme sürecinin ardından, müzik ve resim aracılığıyla çocukluk anıları yaratıcı bir şekilde ifade edilir. Çalışma, yazılan mektuplar ve paylaşımlar eşliğinde tamamlanarak katılımcının duygusal içgörü kazanması desteklenir.",
-    img: icimdekiCocuk,
+    img: icimdekiCocukK,
+    imgLarge: icimdekiCocuk,
     icon: FaTheaterMasks,
   },
   {
@@ -147,7 +159,8 @@ const atolyeGruplari = [
     baslik: "Duyusal & Yaratıcı Üretim",
     aciklama:
       "Bu atölyede katılımcılar esans notalarını tanıyarak koku hafızası ve duyusal farkındalık üzerine çalışır. Üst, orta ve alt notaların dengesi keşfedilerek kişiye özel parfüm formülleri oluşturulur. Süreç sonunda her katılımcı, karakterini yansıtan özgün ve imzalı bir parfüm tasarımıyla atölyeyi tamamlar.",
-    img: parfum,
+    img: parfumK,
+    imgLarge: parfumS,
     icon: FaPaintBrush,
   },
 ];
@@ -195,15 +208,25 @@ const Atolyeler = () => {
               key={grup.id}
               id={grup.id}
               className={`brans-detail ${index % 2 === 1 ? "brans-detail-reverse" : ""}`}
+              style={index > 0 ? { contentVisibility: 'auto', containIntrinsicSize: '0 500px' } : undefined}
             >
               <div className="brans-detail-image">
-                <img
-                  src={grup.img}
-                  alt={grup.baslik}
-                  loading="lazy"
-                  width={600}
-                  height={400}
-                />
+                <picture>
+                  <source
+                    media="(min-width: 768px)"
+                    srcSet={grup.imgLarge}
+                  />
+                  <img
+                    src={grup.img}
+                    alt={grup.baslik}
+                    loading={index === 0 ? "eager" : "lazy"}
+                    fetchPriority={index === 0 ? "high" : "low"}
+                    decoding="async"
+                    width={600}
+                    height={400}
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                </picture>
               </div>
               <div className="brans-detail-content">
                 <div className="brans-detail-header">
