@@ -1,8 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useLayoutEffect } from "react";
 import { FaPalette, FaHandSparkles, FaTheaterMasks, FaPaintBrush } from "react-icons/fa";
 
 import sepetK from "../resimler/sepetK.webp";
 import sepetA from "../resimler/sepetA.webp";
+
+const preloadLCPImage = (src) => {
+  const link = document.createElement('link');
+  link.rel = 'preload';
+  link.as = 'image';
+  link.href = src;
+  link.fetchPriority = 'high';
+  document.head.appendChild(link);
+};
 import mandalaK from "../resimler/mandalaK.webp";
 import mandalaA from "../resimler/mandalaA.webp";
 import keceK from "../resimler/keceK.webp";
@@ -167,6 +176,11 @@ const atolyeGruplari = [
 
 const Atolyeler = () => {
   const [seciliAtolye, setSeciliAtolye] = useState(null);
+
+  useLayoutEffect(() => {
+    const isMobile = window.innerWidth < 768;
+    preloadLCPImage(isMobile ? sepetK : sepetA);
+  }, []);
 
   useEffect(() => {
     const hash = window.location.hash.slice(1);
