@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaAward, FaPalette } from "react-icons/fa";
+import musicImg from "../resimler/musicK.webp";
+import resimImg from "../resimler/resimK.webp";
+import dansImg from "../resimler/dansK.webp";
+import tiyatroImg from "../resimler/tiyatroK.webp";
 import img1 from "../resimler/im1S.webp";
 import img2 from "../resimler/im2S.webp";
 import img3 from "../resimler/im3S.webp";
 import img9 from "../resimler/im9S.webp";
 import parfum from "../resimler/parfumS.webp";
-import musicImg from "../resimler/musicK.webp";
-import resimImg from "../resimler/resimK.webp";
-import dansImg from "../resimler/dansK.webp";
-import tiyatroImg from "../resimler/tiyatroK.webp";
-import mandala from "../resimler/mandalaA.webp";
-import parfumA from "../resimler/parfumA.webp";
 import sepet from "../resimler/sepetA.webp";
+import parfumA from "../resimler/parfumA.webp";
+import mandala from "../resimler/mandalaA.webp";
 
 const slides = [
   { id: 0, src: img3, alt: "Arvia Sanat atölye görseli 1" },
@@ -23,14 +23,14 @@ const slides = [
 ];
 
 const Home = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0); // currentIndex : hangi görsel gösteriliyor.0:ilk görsel..
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % slides.length);
-    }, 5000);
+      setCurrentIndex((prev) => (prev + 1) % slides.length); // prev : 0 --> 1 % 7 = 1.görseli göster 5sn
+    }, 5000);                                                // prev : 1 --> 2 % 7 = 2.görseli göster 5sn..
     return () => clearInterval(interval);
-  }, []);
+  }, [slides.length]);
 
   const branslar = [
     {
@@ -213,8 +213,8 @@ const Home = () => {
                 src={parfumA}
                 alt="Arvia Sanat atölye görseli 2"
                 loading="lazy"
-                decoding="async"
                 width={600}
+                decoding="async"
                 height={220}
               />
             </div>
@@ -223,8 +223,8 @@ const Home = () => {
                 src={sepet}
                 alt="Arvia Sanat atölye görseli 3"
                 loading="lazy"
-                decoding="async"
                 width={600}
+                decoding="async"
                 height={220}
               />
             </div>
