@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { FaInstagram, FaWhatsapp, FaMapMarkerAlt } from "react-icons/fa";
-import logoImg from "/public/images/resim-logo.webp";
+import logoImg from "images/resim-logo.webp";
 import { useLocation, useNavigate } from "react-router-dom";
 
 export default function Footer() {
@@ -58,7 +58,7 @@ export default function Footer() {
 
           {/* 2. Hızlı Menü */}
           <div className="footer-col">
-            <h4 className="footer-heading">Hızlı Menü</h4>
+            <h2 className="footer-heading">Hızlı Menü</h2>
             <ul className="footer-menu">
               <li>
                 <Link to="/" onClick={handleNavClick("/")}>
@@ -103,7 +103,7 @@ export default function Footer() {
 
           {/* 3. İletişim Bilgileri */}
           <div className="footer-col">
-            <h4 className="footer-heading">İletişim Bilgileri</h4>
+            <h2 className="footer-heading">İletişim Bilgileri</h2>
             <ul className="footer-contact-list">
               <li>
                 <a href="tel:+905532109933">+90 (553) 210 99 33</a>
@@ -126,7 +126,7 @@ export default function Footer() {
 
           {/* 4. Sosyal Medya */}
           <div className="footer-col footer-col-social">
-            <h4 className="footer-heading">Sosyal Medya</h4>
+            <h2 className="footer-heading">Sosyal Medya</h2>
             <div className="footer-social">
               <a href="https://instagram.com/arvia.sanat" target="_blank" rel="noopener noreferrer" className="footer-social-link" aria-label="Instagram">
                 <FaInstagram />

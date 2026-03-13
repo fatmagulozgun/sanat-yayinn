@@ -23,7 +23,12 @@ export default function Navbar() {
           />
         </NavLink>
 
-        <button type="button" className="navbar-toggle" onClick={() => setMenuOpen(!menuOpen)} >
+        <button 
+        type="button" 
+        className="navbar-toggle" 
+        onClick={() => setMenuOpen(!menuOpen)} 
+        aria-label={menuOpen ? "Menüyü kapat" : "Menüyü aç"}
+        >
           {menuOpen ? <FaTimes /> : <FaBars />}
         </button>
 
@@ -42,6 +47,7 @@ export default function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             className="navbar-social-link"
+            aria-label="Instagram"
           >
             <FaInstagram />
           </a>
@@ -50,6 +56,7 @@ export default function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             className="navbar-social-link"
+            aria-label="WhatsApp"
           >
             <FaWhatsapp />
           </a>
@@ -59,6 +66,7 @@ export default function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             className="navbar-social-link"
+            aria-label="Google Maps"
           >
             <FaMapMarkerAlt />
           </a>
