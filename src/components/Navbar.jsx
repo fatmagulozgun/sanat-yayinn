@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FaBars, FaTimes, FaInstagram, FaWhatsapp, FaMapMarkerAlt } from "react-icons/fa";
-import logoImg from "../resimler/resim-logo.webp";
+import logoImg from "/public/images/resim-logo.webp";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);

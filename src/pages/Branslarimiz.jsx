@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { FaMusic, FaPalette, FaChild, FaTheaterMasks } from "react-icons/fa";
-import musicImg from "../resimler/music.webp";
+import { Music, Palette, Users, Drama } from "lucide-react";
 import resimImg from "../resimler/resim.webp";
 import dansImg from "../resimler/dans.webp";
 import tiyatroImg from "../resimler/tiyatro.webp";
 import mkl from "../resimler/mke.webp";
+import resimMobilImg from "../resimler/resimMobil.webp";
+import dansMobilImg from "../resimler/dansMobil.webp";
+import tiyatroMobilImg from "../resimler/tiyatroMobil.webp";
+import mklMobil from "../resimler/mkeMobil.webp";
 
 const enstrumanAciklamalari = {
   "Piyano":
@@ -66,7 +69,8 @@ const branslar = [
     baslik: "Müzik Bölümü",
     aciklama: "Bireysel enstrüman eğitimi, teorik altyapı ve performans deneyimini bütüncül bir sistem içerisinde sunar. Eğitim süreci; teknik gelişim, müzikal ifade ve sahne deneyimi olmak üzere üç temel eksende ilerler.",
     img: mkl,
-    icon: FaMusic,
+    imgMobil: mklMobil,
+    icon: Music,
     enstrumanlar: [
       "Piyano", "Keman", "Gitar", "Bağlama", "Bateri", "Darbuka-Perküsyon",
       "Elektro Gitar", "Bas Gitar", "Viyolonsel", "Yan Flüt", "Klarnet", "Ud"
@@ -78,7 +82,8 @@ const branslar = [
     aciklama:
       "Gözlem yeteneği, teknik beceri ve estetik algının sistemli şekilde geliştirilmesini amaçlar. Öğrencilerin özgün üretim süreçleri desteklenir.",
     img: resimImg,
-    icon: FaPalette,
+    imgMobil: resimMobilImg,
+    icon: Palette,
     enstrumanlar: [
       "Tuval Boyama",
       "Yağlı Boya",
@@ -94,7 +99,8 @@ const branslar = [
     aciklama:
       "Teknik disiplin, beden koordinasyonu ve sahne estetiği üzerine yapılandırılmıştır. Öğrencinin fiziksel gelişimi ve sahne özgüveni birlikte ele alınır.",
     img: dansImg,
-    icon: FaChild,
+    imgMobil: dansMobilImg,
+    icon: Users,
     enstrumanlar: [
       "Modern Dans",
       "Bale",
@@ -108,7 +114,8 @@ const branslar = [
     aciklama:
       "İfade gücü, özgüven ve sahne bilincini geliştirmeye yönelik yapılandırılmış bir eğitim programı sunar.",
     img: tiyatroImg,
-    icon: FaTheaterMasks,
+    imgMobil: tiyatroMobilImg,
+    icon: Drama,
     enstrumanlar: [
       "Drama",
       "Çocuk Tiyatrosu",
@@ -120,6 +127,7 @@ const branslar = [
 const Branslarimiz = () => {
   const { hash } = useLocation(); // # ile başlayan hash değerini al
   const [seciliEnstruman, setSeciliEnstruman] = useState(null);
+
 
   const handleEnstrumanClick = (enstruman) => {
     setSeciliEnstruman(enstruman);
@@ -137,13 +145,13 @@ const Branslarimiz = () => {
         brans.enstrumanlar.includes(seciliEnstruman)
     );
 
-  let ModalIcon = FaMusic;
+  let ModalIcon = Music;
   if (aktifBrans?.id === "resim") {
-    ModalIcon = FaPalette;
+    ModalIcon = Palette;
   } else if (aktifBrans?.id === "dans") {
-    ModalIcon = FaChild;
+    ModalIcon = Users;
   } else if (aktifBrans?.id === "tiyatro") {
-    ModalIcon = FaTheaterMasks;
+    ModalIcon = Drama;
   }
 
   useEffect(() => {
@@ -171,7 +179,22 @@ const Branslarimiz = () => {
               className={`brans-detail ${index % 2 === 1 ? "brans-detail-reverse" : ""}`}
             >
               <div className="brans-detail-image">
-                <img src={brans.img} alt={brans.baslik} loading="lazy" />
+                <picture>
+                  <source
+                    media="(max-width:768px)"
+                    srcSet={brans.imgMobil}
+                  />
+                  <img
+                    src={brans.img}
+                    alt={brans.baslik}
+                    loading={index === 0 ? "eager" : "lazy"}
+                    fetchPriority={index === 0 ? "high" : "auto"}
+                    decoding="async"
+                    width={900}
+                    height={600}
+                    sizes="(max-width:768px) 100vw, 900px"
+                  />
+                </picture>
               </div>
               <div className="brans-detail-content">
                 <div className="brans-detail-header">
@@ -183,9 +206,8 @@ const Branslarimiz = () => {
                 <p className="brans-detail-aciklama">{brans.aciklama}</p>
                 {brans.enstrumanlar && (
                   <div
-                    className={`enstruman-listesi ${
-                      brans.id === "dans" ? "enstruman-listesi-iki-kolon" : ""
-                    }`}
+                    className={`enstruman-listesi ${brans.id === "dans" ? "enstruman-listesi-iki-kolon" : ""
+                      }`}
                   >
                     {brans.enstrumanlar.map((enstruman, i) => (
                       <div
@@ -209,6 +231,7 @@ const Branslarimiz = () => {
           onClick={handleModalKapat}
           role="dialog"
           aria-modal="true"
+          aria-labelledby="instrument-title"
         >
           <div
             className="enstruman-modal-balon"
@@ -235,7 +258,7 @@ const Branslarimiz = () => {
               <ModalIcon />
             </div>
             <div className="enstruman-modal-eyebrow">EĞİTİM PROGRAMI</div>
-            <h3 className="enstruman-modal-baslik">{seciliEnstruman}</h3>
+            <h3 className="enstruman-modal-baslik" id="instrument-title">{seciliEnstruman}</h3>
             <p className="enstruman-modal-metin">
               {enstrumanAciklamalari[seciliEnstruman] ||
                 "Bu enstrüman için detaylı program, seviye ve yaş grubu bilgileri için bize ulaşabilirsiniz. Sizin için en uygun eğitim planını birlikte şekillendirelim."}
