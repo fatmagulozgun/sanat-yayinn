@@ -117,7 +117,6 @@ const Home = () => {
                 }}
               >
                 <img
-                  key={slides[currentIndex].id}
                   src={slides[currentIndex].src}
                   alt={slides[currentIndex].alt}
                   className="hero-slider-image is-active"
@@ -160,7 +159,7 @@ const Home = () => {
                     className={`hero-slider-indicator${index === currentIndex ? " is-active" : ""
                       }`}
                     aria-label={`${index + 1}. görsel`}
-                    aria-current={index === currentIndex ? "true" : "false"}
+                    aria-current={index === currentIndex ? "true" : "undefined"}
                     onClick={() => setCurrentIndex(index)}
                   />
                 ))}
@@ -182,7 +181,6 @@ const Home = () => {
                     src={brans.img}
                     alt={brans.baslik}
                     loading="lazy"
-                    fetchPriority="high"
                     decoding="async"
                     width={600}
                     height={400}
@@ -205,6 +203,7 @@ const Home = () => {
                 src={mandala}
                 alt="Arvia Sanat atölye görseli 1"
                 loading="lazy"
+                decoding="async"
                 width={600}
                 height={220}
               />
@@ -215,6 +214,7 @@ const Home = () => {
                 alt="Arvia Sanat atölye görseli 2"
                 loading="lazy"
                 width={600}
+                decoding="async"
                 height={220}
               />
             </div>
@@ -224,6 +224,7 @@ const Home = () => {
                 alt="Arvia Sanat atölye görseli 3"
                 loading="lazy"
                 width={600}
+                decoding="async"
                 height={220}
               />
             </div>
