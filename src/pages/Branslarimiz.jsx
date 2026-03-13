@@ -4,7 +4,7 @@ import { Music, Palette, Users, Drama } from "lucide-react";
 import resimImg from "../resimler/resim.webp";
 import dansImg from "../resimler/dans.webp";
 import tiyatroImg from "../resimler/tiyatro.webp";
-import mkl from "../resimler/mke.webp";
+import mkl from "/public/images/mke.webp";
 import resimMobilImg from "../resimler/resimMobil.webp";
 import dansMobilImg from "../resimler/dansMobil.webp";
 import tiyatroMobilImg from "../resimler/tiyatroMobil.webp";

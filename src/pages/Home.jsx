@@ -7,7 +7,7 @@ import dansImg from "../resimler/dansK.webp";
 import tiyatroImg from "../resimler/tiyatroK.webp";
 import img1 from "../resimler/im1S.webp";
 import img2 from "../resimler/im2S.webp";
-import img3 from "../resimler/im3S.webp";
+import img3 from "/public/images/im3S.webp";
 import img9 from "../resimler/im9S.webp";
 import parfum from "../resimler/parfumS.webp";
 import sepet from "../resimler/sepetA.webp";
