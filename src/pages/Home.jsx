@@ -1,60 +1,103 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, lazy, Suspense } from "react";
 import { Link } from "react-router-dom";
-import { FaAward, FaPalette } from "react-icons/fa";
-import musicImg from "../resimler/musicK.webp";
-import resimImg from "../resimler/resimK.webp";
-import dansImg from "../resimler/dansK.webp";
-import tiyatroImg from "../resimler/tiyatroK.webp";
-import img1 from "../resimler/im1S.webp";
-import img2 from "../resimler/im2S.webp";
 import img3 from "../resimler/im3S.webp";
-import img9 from "../resimler/im9S.webp";
-import parfum from "../resimler/parfumS.webp";
-import sepet from "../resimler/sepetA.webp";
-import parfumA from "../resimler/parfumA.webp";
-import mandala from "../resimler/mandalaA.webp";
 
-const slides = [
+const FaAward = lazy(() => import("react-icons/fa").then(m => ({ default: m.FaAward })));
+const FaPalette = lazy(() => import("react-icons/fa").then(m => ({ default: m.FaPalette })));
+
+const slideUrls = [
   { id: 0, src: img3, alt: "Arvia Sanat atölye görseli 1" },
-  { id: 2, src: img1, alt: "Arvia Sanat atölye görseli 2" },
-  { id: 4, src: img2, alt: "Arvia Sanat atölye görseli 3" },
-  { id: 6, src: img9, alt: "Arvia Sanat atölye görseli 4" },
-  { id: 7, src: parfum, alt: "Arvia Sanat atölye görseli 5" },
+  { id: 2, src: () => import("../resimler/im1S.webp"), alt: "Arvia Sanat atölye görseli 2" },
+  { id: 4, src: () => import("../resimler/im2S.webp"), alt: "Arvia Sanat atölye görseli 3" },
+  { id: 6, src: () => import("../resimler/im9S.webp"), alt: "Arvia Sanat atölye görseli 4" },
+  { id: 7, src: () => import("../resimler/parfumS.webp"), alt: "Arvia Sanat atölye görseli 5" },
 ];
 
 const Home = () => {
-  const [currentIndex, setCurrentIndex] = useState(0); // currentIndex : hangi görsel gösteriliyor.0:ilk görsel..
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [slides, setSlides] = useState([{ id: 0, src: img3, alt: "Arvia Sanat atölye görseli 1" }]);
+  const [belowFoldImages, setBelowFoldImages] = useState({});
 
   useEffect(() => {
+    const loadSlides = async () => {
+      const loaded = await Promise.all(
+        slideUrls.map(async (slide) => {
+          if (typeof slide.src === "function") {
+            const mod = await slide.src();
+            return { ...slide, src: mod.default };
+          }
+          return slide;
+        })
+      );
+      setSlides(loaded);
+    };
+    const timer = setTimeout(loadSlides, 100);
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    if (slides.length < 2) return;
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % slides.length); // prev : 0 --> 1 % 7 = 1.görseli göster 5sn
-    }, 5000);                                                // prev : 1 --> 2 % 7 = 2.görseli göster 5sn..
+      setCurrentIndex((prev) => (prev + 1) % slides.length);
+    }, 5000);
     return () => clearInterval(interval);
   }, [slides.length]);
+
+  useEffect(() => {
+    const loadBelowFoldImages = () => {
+      Promise.all([
+        import("../resimler/musicK.webp"),
+        import("../resimler/resimK.webp"),
+        import("../resimler/dansK.webp"),
+        import("../resimler/tiyatroK.webp"),
+        import("../resimler/mandalaA.webp"),
+        import("../resimler/parfumA.webp"),
+        import("../resimler/sepetA.webp"),
+      ]).then(([music, resim, dans, tiyatro, mandala, parfumA, sepet]) => {
+        setBelowFoldImages({
+          music: music.default,
+          resim: resim.default,
+          dans: dans.default,
+          tiyatro: tiyatro.default,
+          mandala: mandala.default,
+          parfumA: parfumA.default,
+          sepet: sepet.default,
+        });
+      });
+    };
+    
+    if ("requestIdleCallback" in window) {
+      const id = requestIdleCallback(loadBelowFoldImages, { timeout: 200 });
+      return () => cancelIdleCallback(id);
+    } else {
+      const timer = setTimeout(loadBelowFoldImages, 50);
+      return () => clearTimeout(timer);
+    }
+  }, []);
 
   const branslar = [
     {
       baslik: "MÜZİK BÖLÜMÜ",
       aciklama: "Piyano, gitar ve daha fazlası ile profesyonel eğitmenlerle müzik yolculuğunuza başlayın.",
-      img: musicImg,
+      imgKey: "music",
       link: "/branslarimiz#muzik",
     },
     {
       baslik: "RESİM BÖLÜMÜ",
       aciklama: "Tuval boyama, yağlı boya, seramik ve desen dersleri ile yaratıcılığınızı keşfedin.",
-      img: resimImg,
+      imgKey: "resim",
       link: "/branslarimiz#resim",
     },
     {
       baslik: "DANS BÖLÜMÜ",
       aciklama: "Modern dans, bale ve K-Pop ile ritim ve hareketin gücünü deneyimleyin.",
-      img: dansImg,
+      imgKey: "dans",
       link: "/branslarimiz#dans",
     },
     {
       baslik: "TİYATRO BÖLÜMÜ",
       aciklama: "Drama, çocuk ve yetişkin tiyatrosu atölyeleri ile sahne sanatlarında kendinizi ifade edin.",
-      img: tiyatroImg,
+      imgKey: "tiyatro",
       link: "/branslarimiz#tiyatro",
     },
   ];
@@ -176,15 +219,17 @@ const Home = () => {
           <div className="branslar-grid">
             {branslar.map((brans) => (
               <div key={brans.baslik} className="brans-card">
-                <div className="brans-card-image">
-                  <img
-                    src={brans.img}
-                    alt={brans.baslik}
-                    loading="lazy"
-                    decoding="async"
-                    width={600}
-                    height={400}
-                  />
+                <div className="brans-card-image" style={{ backgroundColor: "#f5efe6", minHeight: 200 }}>
+                  {belowFoldImages[brans.imgKey] && (
+                    <img
+                      src={belowFoldImages[brans.imgKey]}
+                      alt={brans.baslik}
+                      loading="lazy"
+                      decoding="async"
+                      width={600}
+                      height={400}
+                    />
+                  )}
                 </div>
                 <h3 className="brans-title">{brans.baslik}</h3>
                 <p className="brans-aciklama">{brans.aciklama}</p>
@@ -198,35 +243,41 @@ const Home = () => {
           {/* Atölyelerimiz Bölümü*/}
           <h2 className="home-section-title">Atölyelerimiz</h2>
           <div className="atolyeler-images-row">
-            <div className="atolyeler-image-card">
-              <img
-                src={mandala}
-                alt="Arvia Sanat atölye görseli 1"
-                loading="lazy"
-                decoding="async"
-                width={600}
-                height={220}
-              />
+            <div className="atolyeler-image-card" style={{ backgroundColor: "#f5efe6", minHeight: 220 }}>
+              {belowFoldImages.mandala && (
+                <img
+                  src={belowFoldImages.mandala}
+                  alt="Arvia Sanat atölye görseli 1"
+                  loading="lazy"
+                  decoding="async"
+                  width={600}
+                  height={220}
+                />
+              )}
             </div>
-            <div className="atolyeler-image-card">
-              <img
-                src={parfumA}
-                alt="Arvia Sanat atölye görseli 2"
-                loading="lazy"
-                width={600}
-                decoding="async"
-                height={220}
-              />
+            <div className="atolyeler-image-card" style={{ backgroundColor: "#f5efe6", minHeight: 220 }}>
+              {belowFoldImages.parfumA && (
+                <img
+                  src={belowFoldImages.parfumA}
+                  alt="Arvia Sanat atölye görseli 2"
+                  loading="lazy"
+                  decoding="async"
+                  width={600}
+                  height={220}
+                />
+              )}
             </div>
-            <div className="atolyeler-image-card">
-              <img
-                src={sepet}
-                alt="Arvia Sanat atölye görseli 3"
-                loading="lazy"
-                width={600}
-                decoding="async"
-                height={220}
-              />
+            <div className="atolyeler-image-card" style={{ backgroundColor: "#f5efe6", minHeight: 220 }}>
+              {belowFoldImages.sepet && (
+                <img
+                  src={belowFoldImages.sepet}
+                  alt="Arvia Sanat atölye görseli 3"
+                  loading="lazy"
+                  decoding="async"
+                  width={600}
+                  height={220}
+                />
+              )}
             </div>
           </div>
           <div className="atolyeler-grid">
@@ -245,7 +296,9 @@ const Home = () => {
           <div className="premium-block">
             <div className="premium-block-header">
               <div className="premium-block-icon">
-                <FaAward aria-hidden />
+                <Suspense fallback={<span style={{ width: 22, height: 22 }} />}>
+                  <FaAward aria-hidden />
+                </Suspense>
               </div>
               <h3 className="premium-block-title">Uluslararası Sınav Merkezi</h3>
             </div>
@@ -257,7 +310,9 @@ const Home = () => {
           <div className="premium-block">
             <div className="premium-block-header">
               <div className="premium-block-icon">
-                <FaPalette aria-hidden />
+                <Suspense fallback={<span style={{ width: 22, height: 22 }} />}>
+                  <FaPalette aria-hidden />
+                </Suspense>
               </div>
               <h3 className="premium-block-title">Güzel Sanatlar ve Konservatuvar Hazırlık Programları</h3>
             </div>
