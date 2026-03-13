@@ -183,16 +183,17 @@ const Branslarimiz = () => {
                   <source
                     media="(max-width:768px)"
                     srcSet={brans.imgMobil}
+                    sizes="100vw"
                   />
                   <img
                     src={brans.img}
                     alt={`${brans.baslik} branşının görseli`}
                     loading={index === 0 ? "eager" : "lazy"}
-                    fetchPriority={index === 0 ? "high" : "auto"}
+                    fetchPriority={index === 0 ? "high" : "low"}
                     decoding="async"
                     width={900}
-                    height={600}
-                    sizes="(max-width:768px) 100vw, 900px"
+                    height={800}
+                    sizes="(max-width:768px) 100vw, 50vw"
                   />
                 </picture>
               </div>

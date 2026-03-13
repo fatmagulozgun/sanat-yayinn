@@ -49,7 +49,7 @@ export default function Footer() {
           {/* 1. Logo + Kurumsal Açıklama */}
           <div className="footer-col footer-brand">
             <Link to="/" className="footer-logo">
-              <img src={logoImg} alt="Arvia Sanat" className="footer-logo-img" />
+              <img src={logoImg} alt="Arvia Sanat" onClick={goHome} className="footer-logo-img" width={160} height={60} loading="eager" decoding="async" />
             </Link>
             <p className="footer-desc">
               Müzik, resim, dans ve tiyatro alanlarında profesyonel eğitim sunan, öğrencilerini çok yönlü gelişime teşvik eden bir sanat akademisi.
