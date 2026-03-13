@@ -12,7 +12,15 @@ export default function Navbar() {
     <nav className="navbar">
       <div className="navbar-inner">
         <NavLink to="/" className="navbar-logo" onClick={closeMenu}>
-          <img src={logoImg} alt="Arvia Sanat" className="navbar-logo-img" />
+          <img
+            src={logoImg}
+            alt="Arvia Sanat logosu"
+            className="navbar-logo-img"
+            width={140}
+            height={56}
+            loading="eager"
+            decoding="async"
+          />
         </NavLink>
 
         <button type="button" className="navbar-toggle" onClick={() => setMenuOpen(!menuOpen)} >
@@ -27,7 +35,7 @@ export default function Navbar() {
           <NavLink className="navLink" to="/hakkimizda" onClick={closeMenu}>Hakkımızda</NavLink>
           <NavLink className="navLink" to="/iletisim" onClick={closeMenu}>İletişim</NavLink>
         </div>
-        
+
         <div className="navbar-social">
           <a
             href="https://instagram.com/arvia.sanat"
@@ -50,8 +58,8 @@ export default function Navbar() {
             href={`https://www.google.com/maps/search/?api=1&query=${MAP_COORDINATES}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="navbar-social-link"            
-           >
+            className="navbar-social-link"
+          >
             <FaMapMarkerAlt />
           </a>
         </div>

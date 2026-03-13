@@ -1,7 +1,6 @@
 import React from "react";
 import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock, FaInstagram, FaWhatsapp } from "react-icons/fa";
 
-// Konum: 36°47'18.4"N 34°37'10.4"E
 const MAP_COORDINATES = "36.788437,34.61956";
 const MAP_EMBED_URL = `https://maps.google.com/maps?q=${MAP_COORDINATES}&t=&z=16&ie=UTF8&iwloc=&output=embed`;
 
