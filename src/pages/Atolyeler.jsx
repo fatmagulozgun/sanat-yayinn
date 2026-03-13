@@ -1,17 +1,9 @@
-import React, { useState, useEffect, useLayoutEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { FaPalette, FaHandSparkles, FaTheaterMasks, FaPaintBrush } from "react-icons/fa";
 
-import sepetK from "../resimler/sepetK.webp";
 import sepetA from "../resimler/sepetA.webp";
 
-const preloadLCPImage = (src) => {
-  const link = document.createElement('link');
-  link.rel = 'preload';
-  link.as = 'image';
-  link.href = src;
-  link.fetchPriority = 'high';
-  document.head.appendChild(link);
-};
+const SEPET_K_PUBLIC = "/images/sepetK.webp";
 import mandalaK from "../resimler/mandalaK.webp";
 import mandalaA from "../resimler/mandalaA.webp";
 import keceK from "../resimler/keceK.webp";
@@ -123,7 +115,7 @@ const atolyeGruplari = [
     baslik: "Seramik & Doğal Malzeme Atölyeleri",
     aciklama:
       "Bu atölyede katılımcılar, seramik sanatının temel şekillendirme tekniklerini uygulamalı olarak deneyimler. Tasarım süreci; çamurun hazırlanması, form verilmesi ve yüzey düzenleme aşamalarını kapsayacak şekilde planlanır. Katılımcılar kendi tasarladıkları bardakları üretme fırsatı bulur; üretim sürecinde sabır, el becerisi ve estetik bakış açısı geliştirir. Atölye sonunda ortaya çıkan özgün çalışmalar, sanatsal üretimin somut ve kalıcı bir deneyime dönüşmesini sağlar.",
-    img: sepetK,
+    img: SEPET_K_PUBLIC,
     imgLarge: sepetA,
     icon: FaHandSparkles,
   },
@@ -176,11 +168,6 @@ const atolyeGruplari = [
 
 const Atolyeler = () => {
   const [seciliAtolye, setSeciliAtolye] = useState(null);
-
-  useLayoutEffect(() => {
-    const isMobile = window.innerWidth < 768;
-    preloadLCPImage(isMobile ? sepetK : sepetA);
-  }, []);
 
   useEffect(() => {
     const hash = window.location.hash.slice(1);
