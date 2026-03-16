@@ -1,6 +1,47 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const AboutBilgi = () => {
+  const [timelineVisible, setTimelineVisible] = useState(false);
+
+  useEffect(() => {
+    const previousTitle = document.title;
+    const descriptionMeta = document.querySelector('meta[name="description"]');
+    const previousDescription = descriptionMeta?.getAttribute("content") || "";
+
+    document.title = "Arvia Sanat | Kurum Müdürü ve Eğitim Felsefesi";
+    if (descriptionMeta) {
+      descriptionMeta.setAttribute(
+        "content",
+        "Arvia Sanat Kurum Müdürü Erol Ermetal'in eğitim yaklaşımını, kurumun misyon ve vizyonunu detaylı olarak keşfedin. Sanat eğitimi felsefemiz ve değerlerimiz hakkında bilgi alın."
+      );
+    }
+
+    // Zaman çizelgesini ilk boyamadan sonra, tarayıcı boşta kalınca yükle
+    let idleId = null;
+    let timeoutId = null;
+
+    const revealTimeline = () => setTimelineVisible(true);
+
+    if (typeof window !== "undefined" && "requestIdleCallback" in window) {
+      idleId = window.requestIdleCallback(revealTimeline, { timeout: 1200 });
+    } else {
+      timeoutId = window.setTimeout(revealTimeline, 900);
+    }
+
+    return () => {
+      document.title = previousTitle;
+      if (descriptionMeta) {
+        descriptionMeta.setAttribute("content", previousDescription);
+      }
+      if (idleId !== null && typeof window !== "undefined" && "cancelIdleCallback" in window) {
+        window.cancelIdleCallback(idleId);
+      }
+      if (timeoutId !== null) {
+        window.clearTimeout(timeoutId);
+      }
+    };
+  }, []);
+
   return (
     <main className="about-bilgi-page">
       <div className="container">
@@ -23,6 +64,7 @@ const AboutBilgi = () => {
           </div>
         </section>
 
+        {timelineVisible && (
         <div className="about-bilgi-timeline">
           <div className="about-bilgi-timeline-line" aria-hidden="true" />
 
@@ -83,6 +125,7 @@ const AboutBilgi = () => {
             </div>
           </div>
         </div>
+        )}
         </div>
       </div>
     </main>
