@@ -170,7 +170,9 @@ const Galeri = () => {
                 <img
                   src={resim.thumb || resim.src}
                   alt={resim.alt}
-                  loading="lazy"
+                  loading={index === 0 ? "eager" : "lazy"}
+                  fetchPriority={index === 0 ? "high" : "auto"}
+                  decoding="async"
                   width={600}
                   height={450}
                 />
