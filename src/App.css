@@ -2454,6 +2454,12 @@ a.contact-card:focus {
     transition: transform 200ms ease, box-shadow 200ms ease;
 }
 
+/* Galeri: ekran dışı kartların render maliyetini düşür */
+.galeri-kart:nth-child(n + 7) {
+    content-visibility: auto;
+    contain-intrinsic-size: 240px 200px;
+}
+
 .galeri-kart:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-hover);

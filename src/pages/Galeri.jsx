@@ -71,6 +71,7 @@ const galeriResimleri = [
 const Galeri = () => {
   const [seciliIndex, setSeciliIndex] = useState(null);
   const [fullSrcByIndex, setFullSrcByIndex] = useState({});
+  const [visibleCount, setVisibleCount] = useState(8);
 
   const fullImageLoaders = useMemo(() => {
     // Tam boy görselleri sadece gerektiğinde (modal açılınca) yükle.
@@ -84,6 +85,30 @@ const Galeri = () => {
   const handleKapat = () => {
     setSeciliIndex(null);
   };
+
+  useEffect(() => {
+    // İlk boyamada sadece ilk ekranı dolduracak kadar kart çiz.
+    // Sonrasında tarayıcı boşta kalınca kalanları ekle.
+    let timeoutId = null;
+    let idleId = null;
+
+    const revealAll = () => setVisibleCount(galeriResimleri.length);
+
+    if (typeof window !== "undefined" && "requestIdleCallback" in window) {
+      idleId = window.requestIdleCallback(revealAll, { timeout: 1200 });
+    } else {
+      timeoutId = window.setTimeout(revealAll, 700);
+    }
+
+    return () => {
+      if (idleId !== null && typeof window !== "undefined" && "cancelIdleCallback" in window) {
+        window.cancelIdleCallback(idleId);
+      }
+      if (timeoutId !== null) {
+        window.clearTimeout(timeoutId);
+      }
+    };
+  }, []);
 
   const goOnceki = () => {
     if (seciliIndex === null) return;
@@ -149,7 +174,7 @@ const Galeri = () => {
         </header>
 
         <div className="galeri-grid">
-          {galeriResimleri.map((resim, index) => (
+          {galeriResimleri.slice(0, visibleCount).map((resim, index) => (
             <button
               key={index}
               type="button"
