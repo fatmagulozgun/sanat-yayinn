@@ -9,11 +9,30 @@ const About = () => {
   const videoRef = useRef(null); //useRef ile video etiketini bul
 
   useEffect(() => {
+    const previousTitle = document.title;
+    const descriptionMeta = document.querySelector('meta[name="description"]');
+    const previousDescription = descriptionMeta?.getAttribute("content") || "";
+
+    document.title = "Arvia Sanat Hakkımızda | Sanat Akademisi ve Eğitim Yaklaşımı";
+    if (descriptionMeta) {
+      descriptionMeta.setAttribute(
+        "content",
+        "Arvia Sanat hakkında bilgi edinin. Kurum müdürü Erol Ermetal liderliğinde müzik, resim, dans ve tiyatro alanlarında nasıl bir eğitim yaklaşımı benimsiyoruz, değerlerimiz ve vizyonumuz neler öğrenin."
+      );
+    }
+
     const video = videoRef.current; //html video etiketini bul
     if (video) {
       video.muted = true; //video sesi kapat
       video.play().catch(() => { }); //video oynatılırken hata olursa hata yakalama
     }
+
+    return () => {
+      document.title = previousTitle;
+      if (descriptionMeta) {
+        descriptionMeta.setAttribute("content", previousDescription);
+      }
+    };
   }, []);
 
   return (
