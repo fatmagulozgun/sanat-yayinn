@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import mudurImg from "../resimler/mudurr.webp";
+import videoPoster from "../resimler/mudurrH.webp";
 import tanitimVideo from "../resimler/Revizee2.mp4";
 
 const About = () => {
@@ -29,7 +30,9 @@ const About = () => {
                 <img
                   src={mudurImg}
                   alt="Erol Ermetal - Arvia Sanat Kurum Müdürü"
-                  loading="lazy"
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
                   width={280}
                   height={420}
                 />
@@ -59,12 +62,13 @@ const About = () => {
             <video
               ref={videoRef}
               src={tanitimVideo}
+              poster={videoPoster}
               controls
               muted
               playsInline
               autoPlay
               loop
-              preload="auto"
+              preload="metadata"
             >
               Tarayıcınız video oynatmayı desteklemiyor.
             </video>
