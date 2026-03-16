@@ -1,10 +1,50 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock, FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 const MAP_COORDINATES = "36.788437,34.61956";
 const MAP_EMBED_URL = `https://maps.google.com/maps?q=${MAP_COORDINATES}&t=&z=16&ie=UTF8&iwloc=&output=embed`;
 
 const Contact = () => {
+  const [mapVisible, setMapVisible] = useState(false);
+
+  useEffect(() => {
+    const previousTitle = document.title;
+    const descriptionMeta = document.querySelector('meta[name="description"]');
+    const previousDescription = descriptionMeta?.getAttribute("content") || "";
+
+    document.title = "Arvia Sanat İletişim | Adres, Telefon ve Ulaşım Bilgileri";
+    if (descriptionMeta) {
+      descriptionMeta.setAttribute(
+        "content",
+        "Arvia Sanat ile iletişime geçin. Adres, telefon, e-posta ve sosyal medya hesaplarımızı görüntüleyin, Mersin Akdeniz Çamlıbel'deki sanat merkezimize ulaşım için harita bilgilerine bakın."
+      );
+    }
+
+    // Harita iframe'ini, ilk boyamadan sonra ve tarayıcı boşta kalınca yükle
+    let idleId = null;
+    let timeoutId = null;
+
+    const revealMap = () => setMapVisible(true);
+
+    if (typeof window !== "undefined" && "requestIdleCallback" in window) {
+      idleId = window.requestIdleCallback(revealMap, { timeout: 1500 });
+    } else {
+      timeoutId = window.setTimeout(revealMap, 1200);
+    }
+
+    return () => {
+      document.title = previousTitle;
+      if (descriptionMeta) {
+        descriptionMeta.setAttribute("content", previousDescription);
+      }
+      if (idleId !== null && typeof window !== "undefined" && "cancelIdleCallback" in window) {
+        window.cancelIdleCallback(idleId);
+      }
+      if (timeoutId !== null) {
+        window.clearTimeout(timeoutId);
+      }
+    };
+  }, []);
   return (
     <main className="contact-page">
       <div className="container">
@@ -73,16 +113,35 @@ const Contact = () => {
           <aside className="contact-box contact-map-section">
             <h2 className="contact-section-title">Harita</h2>
             <div className="contact-map-wrapper">
-              <iframe
-                title="Arvia Sanat Konum"
-                src={MAP_EMBED_URL}
-                width="100%"
-                height="490"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
+              {mapVisible ? (
+                <iframe
+                  title="Arvia Sanat Konum"
+                  src={MAP_EMBED_URL}
+                  width="100%"
+                  height="490"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              ) : (
+                <button
+                  type="button"
+                  className="contact-card contact-card-static"
+                  style={{ width: "100%", height: "100%", cursor: "pointer" }}
+                  onClick={() => setMapVisible(true)}
+                >
+                  <div className="contact-card-icon">
+                    <FaMapMarkerAlt aria-hidden />
+                  </div>
+                  <div className="contact-card-content">
+                    <h3 className="contact-card-title">Haritayı Göster</h3>
+                    <p className="contact-card-text">
+                      Konumu görmek için tıklayın. Harita yalnızca ihtiyaç duyulduğunda yüklenir.
+                    </p>
+                  </div>
+                </button>
+              )}
             </div>
           </aside>
         </div>
