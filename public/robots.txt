@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://arviasanat.com/sitemap.xml
+Sitemap: https://sanat-yayinn.vercel.app.com/sitemap.xml

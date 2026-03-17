@@ -1,47 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://arviasanat.com/</loc>
+    <loc>https://sanat-yayinn.vercel.app/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://arviasanat.com/hakkimizda</loc>
+    <loc>https://sanat-yayinn.vercel.app/hakkimizda</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://arviasanat.com/branslarimiz</loc>
+    <loc>https://sanat-yayinn.vercel.app/branslarimiz</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://arviasanat.com/atolyelerimiz</loc>
+    <loc>https://sanat-yayinn.vercel.app/atolyelerimiz</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://arviasanat.com/galeri</loc>
+    <loc>https://sanat-yayinn.vercel.app/galeri</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://arviasanat.com/hakkimizda-bilgi</loc>
+    <loc>https://sanat-yayinn.vercel.app/hakkimizda-bilgi</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://arviasanat.com/iletisim</loc>
+    <loc>https://sanat-yayinn.vercel.app/iletisim</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://arviasanat.com/uluslararasi-sinav-merkezi</loc>
+    <loc>https://sanat-yayinn.vercel.app/uluslararasi-sinav-merkezi</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://arviasanat.com/guzel-sanatlar</loc>
+    <loc>https://sanat-yayinn.vercel.app/guzel-sanatlar</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
